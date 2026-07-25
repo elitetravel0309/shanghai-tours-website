@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Shanghai Tours | Frequently Asked Questions</title>
+    <meta name="description" content="Find answers to common questions about Shanghai tours — booking, payment, guides, itineraries, and more. Plan your trip with confidence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🏮</span>
+                    <span class="logo-text">Shanghai<span class="logo-highlight">Tours</span></span>
+                </a>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="tours.html" class="nav-link">Tours</a></li>
+                        <li><a href="about.html" class="nav-link">About Us</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+                    <button class="hamburger" id="hamburger" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1600&q=80')">
+        <div class="page-banner-overlay"></div>
+        <div class="container">
+            <div class="page-banner-content">
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know before your Shanghai tour</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section section">
+        <div class="container">
+            <div class="faq-categories">
+                <button class="faq-category active" data-category="booking">Booking &amp; Payment</button>
+                <button class="faq-category" data-category="tours">Tours &amp; Itineraries</button>
+                <button class="faq-category" data-category="guides">Guides &amp; Groups</button>
+                <button class="faq-category" data-category="travel">Travel Tips</button>
+            </div>
+
+            <div class="faq-list" id="faqList">
+                <!-- Booking & Payment -->
+                <div class="faq-category-content active" id="cat-booking">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <h3>How do I book a tour?</h3>
+                            <span class="faq-toggle"><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Booking is easy! You can:</p>
+                            <ul>
+                                <li>Fill out the <a href="contact.html">contact form</a> on our website</li>
+                                <li>Send us a message on <a href="https://wa.me/8613800000000">WhatsApp</a></li>
+                                <li>Email us at <a href="mailto:info@shanghaitours.com">info@shanghaitours.com</a></li>
+                                <li>Call us at <a href="tel:+862168888888">+86 21 6888 8888</a></li>
+                            </ul>
+                            <p>We'll respond within 24 hours with a personalized itinerary and price quote.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What payment methods do you accept?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept the following payment methods:</p>
+                            <ul>
+                                <li><strong>Cash</strong> (paid on the day of the tour in CNY or USD)</li>
+                                <li><strong>WeChat Pay / Alipay</strong> (popular in China)</li>
+                                <li><strong>Bank Transfer</strong> (for advance bookings)</li>
+                                <li><strong>PayPal</strong> (for international travelers)</li>
+                            </ul>
+                            <p>No deposit is required for most tours — you can pay on the day of your tour.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I cancel or change my booking?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer <strong>free cancellation</strong> up to 48 hours before your scheduled tour. Changes to dates or itineraries are always welcome at no extra charge. We understand that travel plans can change, and we're flexible to accommodate you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I need to pay a deposit?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For most standard tours, <strong>no deposit is required</strong>. You can pay on the day of your tour. For custom multi-day tours or large groups (6+ people), we may ask for a small deposit (20%) to confirm the booking. This is fully refundable if you cancel 48 hours in advance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tours & Itineraries -->
+                <div class="faq-category-content" id="cat-tours">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <h3>What is included in the tour price?</h3>
+                            <span class="faq-toggle"><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our tour prices typically include:</p>
+                            <ul>
+                                <li>Private English-speaking guide</li>
+                                <li>Hotel pickup and drop-off (within central Shanghai)</li>
+                                <li>All entrance fees to attractions</li>
+                                <li>Lunch or food tastings as specified</li>
+                                <li>Bottled water</li>
+                                <li>Boat/cruise tickets where applicable</li>
+                            </ul>
+                            <p>Personal expenses, tips, and souvenirs are not included. There are <strong>no hidden fees</strong> — everything is clearly stated upfront.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I customize the itinerary?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! All our tours are fully customizable. You can:</p>
+                            <ul>
+                                <li>Add or remove attractions</li>
+                                <li>Adjust the start time and duration</li>
+                                <li>Choose your preferred lunch style</li>
+                                <li>Request specific activities (shopping, photography, etc.)</li>
+                                <li>Combine elements from different tours</li>
+                            </ul>
+                            <p>Just let us know your preferences when you contact us, and we'll design the perfect itinerary for you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are airport pickup and drop-off available?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer airport transfer services for an additional fee. We can pick you up from either <strong>Pudong International Airport (PVG)</strong> or <strong>Hongqiao International Airport (SHA)</strong>. This can be added to any tour package. Please let us know your flight details when booking.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What if it rains on the day of my tour?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Don't worry! Most of our tours are designed to work in any weather. Many attractions are indoor or have covered areas. If it's a light rain, we'll provide umbrellas and continue as planned. In case of extreme weather, we can reschedule your tour at no extra cost.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guides & Groups -->
+                <div class="faq-category-content" id="cat-guides">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <h3>Are your guides English-speaking?</h3>
+                            <span class="faq-toggle"><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! All our guides are <strong>fluent in English</strong>. Many also speak additional languages including Japanese, French, German, Korean, and Spanish. We carefully select guides who are not only language-proficient but also passionate storytellers and knowledgeable about Shanghai's history and culture.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are the tours private or shared?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most of our tours are <strong>private</strong> — just you and your party. We believe private tours offer a more personalized and flexible experience. However, we can arrange small group tours (up to 6 people) if you'd like to join other travelers or if you're traveling solo and want to meet people.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is the maximum group size?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For private tours, there's no strict limit — we can accommodate groups of any size. For larger groups (10+ people), we'll arrange a comfortable private bus and may assign multiple guides to ensure everyone gets personal attention. Contact us for a custom quote for large groups.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel Tips -->
+                <div class="faq-category-content" id="cat-travel">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <h3>Do I need a visa to visit Shanghai?</h3>
+                            <span class="faq-toggle"><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>China's visa policy depends on your nationality. Many countries now benefit from <strong>visa-free transit</strong> (144 hours / 6 days) when transiting through Shanghai. As of 2024-2025, citizens from <strong>54 countries</strong> can enjoy this policy. Additionally, several countries have mutual visa exemption agreements with China.</p>
+                            <p>We recommend checking with your local Chinese embassy or consulate for the most up-to-date visa requirements specific to your nationality.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What should I bring on the tour?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend bringing:</p>
+                            <ul>
+                                <li>Comfortable walking shoes (essential!)</li>
+                                <li>Sunscreen and a hat (summer months)</li>
+                                <li>A light jacket or sweater (spring/autumn)</li>
+                                <li>Your camera or smartphone for photos</li>
+                                <li>A reusable water bottle</li>
+                                <li>Some cash (CNY) for snacks or souvenirs</li>
+                                <li>Your passport (carry a copy)</li>
+                            </ul>
+                            <p>We'll provide bottled water and umbrellas if needed.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is Shanghai safe for tourists?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Shanghai is one of the <strong>safest major cities in the world</strong> for tourists. Violent crime is extremely rare. The city has excellent public security, well-lit streets at night, and friendly locals who are used to international visitors. As with any big city, just practice common sense — keep an eye on your belongings in crowded areas, and you'll have a worry-free experience.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can you help with hotel recommendations?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We're happy to recommend hotels in Shanghai based on your budget, preferred location, and travel style. We have partnerships with several quality hotels in the Bund, Lujiazui, French Concession, and Jing'an areas. Just let us know your preferences and we'll suggest the best options.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is the best time to visit Shanghai?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Shanghai is beautiful year-round, but the best times to visit are:</p>
+                            <ul>
+                                <li><strong>March to May (Spring)</strong> — Mild temperatures, blooming flowers, comfortable sightseeing</li>
+                                <li><strong>September to November (Autumn)</strong> — Pleasant weather, clear skies, perfect for outdoor activities</li>
+                                <li><strong>June to August (Summer)</strong> — Hot and humid, but great for nightlife and river cruises</li>
+                                <li><strong>December to February (Winter)</strong> — Cold but less crowded, lower prices, festive decorations</li>
+                            </ul>
+                            <p>Each season has its charm — we can help you plan the perfect itinerary regardless of when you visit!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Still Have Questions?</h2>
+                <p class="cta-text">We're here to help! Reach out and we'll get back to you within 24 hours.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="https://wa.me/8613800000000" class="btn btn-outline btn-lg">WhatsApp <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">🏮</span>
+                        <span class="logo-text">Shanghai<span class="logo-highlight">Tours</span></span>
+                    </a>
+                    <p>Your trusted local tour operator in Shanghai. We create unforgettable experiences through the eyes of a local.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tour Categories</h4>
+                    <ul>
+                        <li><a href="tours.html#classic">Classic City Tours</a></li>
+                        <li><a href="tours.html#food">Food &amp; Nightlife</a></li>
+                        <li><a href="tours.html#watertown">Water Town Day Trips</a></li>
+                        <li><a href="tours.html#cultural">Cultural Experiences</a></li>
+                        <li><a href="tours.html#night">Night Tours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+862168888888">+86 21 6888 8888</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@shanghaitours.com">info@shanghaitours.com</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8613800000000">+86 138 0000 0000</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Nanjing Road, Huangpu District, Shanghai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShanghaiTours.com. All rights reserved. | Licensed Tour Operator in Shanghai</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
