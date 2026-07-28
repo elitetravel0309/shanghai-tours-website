@@ -6,6 +6,22 @@
 /* --- Reset & Base --- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Font display optimization */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap);
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
+}
+
 :root {
     --primary: #c43a2b;
     --primary-dark: #a02d20;

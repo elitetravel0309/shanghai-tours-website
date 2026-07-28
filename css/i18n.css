@@ -1,0 +1,202 @@
+/* ============================================
+   Language Switcher Styles
+   ============================================ */
+
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(196, 58, 43, 0.1);
+    border: 1px solid rgba(196, 58, 43, 0.2);
+    color: var(--primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-switcher:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.lang-current {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lang-arrow {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.lang-switcher:hover .lang-arrow {
+    transform: translateY(1px);
+}
+
+/* Search styles */
+.search-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.search-trigger:hover {
+    background: var(--bg-light);
+    color: var(--primary);
+}
+
+/* Search overlay */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 24px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.search-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-overlay-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-overlay-close:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.search-overlay-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 18px 24px;
+    font-size: 1.3rem;
+    font-family: var(--font-sans);
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius);
+    color: #fff;
+    outline: none;
+    transition: var(--transition);
+    margin-bottom: 16px;
+}
+.search-overlay-input:focus {
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.15);
+}
+.search-overlay-input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.search-overlay-hint {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 40px;
+}
+
+.search-overlay-results {
+    width: 100%;
+    max-width: 600px;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+.search-result-item:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.search-result-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.search-result-info {
+    flex: 1;
+}
+
+.search-result-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.search-result-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.search-result-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    flex-shrink: 0;
+}
+
+.search-no-results {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    padding: 40px 0;
+    font-size: 1.1rem;
+}
+
+/* Mobile menu - hide lang switcher behind hamburger on small screens */
+@media (max-width: 768px) {
+    .lang-switcher {
+        margin-left: auto;
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+    .search-trigger {
+        display: none;
+    }
+}

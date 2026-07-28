@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shanghai Street Food &amp; Night Market Tour - Shanghai Tours</title>
     <meta name="description" content="Explore Shanghai's best street food and night markets. Taste xiaolongbao, shengjian, noodles and more with a local foodie guide. From $65.">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shanghaitours.com/tours/food-tour.html">
+    <meta property="og:title" content="Shanghai Street Food &amp; Night Market Tour - Shanghai Tours">
+    <meta property="og:description" content="Explore Shanghai's best street food and night markets. Taste xiaolongbao, shengjian, noodles and more with a local foodie guide.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559454403-aa9f87e350b0?w=1200&q=80">
+    <meta property="og:locale" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shanghai Street Food &amp; Night Market Tour - Shanghai Tours">
+    <meta name="twitter:description" content="Explore Shanghai's best street food and night markets. Taste xiaolongbao, shengjian, noodles and more with a local foodie guide.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1559454403-aa9f87e350b0?w=1200&q=80">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
+    <link rel="canonical" href="https://shanghaitours.com/tours/food-tour.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
 </head>
 <body>
     <header class="header" id="header">
@@ -21,15 +38,19 @@
                 </a>
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li><a href="../index.html" class="nav-link">Home</a></li>
-                        <li><a href="../tours.html" class="nav-link active">Tours</a></li>
-                        <li><a href="../about.html" class="nav-link">About Us</a></li>
-                        <li><a href="../contact.html" class="nav-link">Contact</a></li>
-                        <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+                        <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                        <li><a href="../tours.html" class="nav-link active" data-i18n="nav.tours">Tours</a></li>
+                        <li><a href="../about.html" class="nav-link" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="../contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="../faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <a href="../contact.html" class="btn btn-primary btn-sm">Book Now</a>
+                    <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+                        <span class="lang-current">EN</span>
+                        <span class="lang-arrow">▾</span>
+                    </button>
+                    <a href="../contact.html" class="btn btn-primary btn-sm" data-i18n="nav.book">Book Now</a>
                     <button class="hamburger" id="hamburger" aria-label="Menu">
                         <span></span><span></span><span></span>
                     </button>
@@ -199,7 +220,7 @@
             <div class="tours-grid">
                 <div class="tour-card">
                     <div class="tour-card-image">
-                        <img src="https://images.unsplash.com/photo-1541472119797-2e5b4e5f0e0a?w=600&q=80" alt="Classic Tour">
+                        <img src="https://images.unsplash.com/photo-1541472119797-2e5b4e5f0e0a?w=600&q=80" alt="Classic Tour" loading="lazy">
                         <span class="tour-card-badge">Most Popular</span>
                         <span class="tour-card-duration"><i class="far fa-clock"></i> 8 Hours</span>
                     </div>
@@ -214,7 +235,7 @@
                 </div>
                 <div class="tour-card">
                     <div class="tour-card-image">
-                        <img src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=600&q=80" alt="Water Town">
+                        <img src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=600&q=80" alt="Water Town" loading="lazy">
                         <span class="tour-card-badge">Day Trip</span>
                         <span class="tour-card-duration"><i class="far fa-clock"></i> 6 Hours</span>
                     </div>
@@ -229,7 +250,7 @@
                 </div>
                 <div class="tour-card">
                     <div class="tour-card-image">
-                        <img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=600&q=80" alt="Cultural Tour">
+                        <img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=600&q=80" alt="Cultural Tour" loading="lazy">
                         <span class="tour-card-badge">Cultural</span>
                         <span class="tour-card-duration"><i class="far fa-clock"></i> 5 Hours</span>
                     </div>
@@ -298,6 +319,7 @@
         </div>
     </footer>
     <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="../js/i18n.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>

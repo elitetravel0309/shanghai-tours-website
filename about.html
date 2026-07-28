@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Shanghai Tours | Your Local Travel Experts</title>
     <meta name="description" content="Meet our team of passionate local guides in Shanghai. Learn about our story, values, and commitment to providing unforgettable travel experiences.">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shanghaitours.com/about.html">
+    <meta property="og:title" content="About Us - Shanghai Tours | Your Local Travel Experts">
+    <meta property="og:description" content="Learn about Shanghai Tours — your trusted local tour operator. Meet our team of expert English-speaking guides.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&q=80">
+    <meta property="og:locale" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Shanghai Tours | Your Local Travel Experts">
+    <meta name="twitter:description" content="Learn about Shanghai Tours — your trusted local tour operator. Meet our team of expert English-speaking guides.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&q=80">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
+    <link rel="canonical" href="https://shanghaitours.com/about.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/i18n.css">
 </head>
 <body>
     <header class="header" id="header">
@@ -21,15 +38,19 @@
                 </a>
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="tours.html" class="nav-link">Tours</a></li>
-                        <li><a href="about.html" class="nav-link active">About Us</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                        <li><a href="tours.html" class="nav-link" data-i18n="nav.tours">Tours</a></li>
+                        <li><a href="about.html" class="nav-link active" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+                    <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+                        <span class="lang-current">EN</span>
+                        <span class="lang-arrow">▾</span>
+                    </button>
+                    <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.book">Book Now</a>
                     <button class="hamburger" id="hamburger" aria-label="Menu">
                         <span></span><span></span><span></span>
                     </button>
@@ -52,7 +73,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80" alt="Shanghai Tours team">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80" alt="Shanghai Tours team" loading="lazy">
                 </div>
                 <div class="about-text">
                     <span class="section-tag">Our Story</span>
@@ -122,7 +143,7 @@
             </div>
             <div class="team-grid">
                 <div class="team-card">
-                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lily Wang">
+                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lily Wang" loading="lazy">
                     <h3>Lily Wang</h3>
                     <span class="team-role">Senior Guide &amp; Food Specialist</span>
                     <p>"Shanghai's food scene tells the story of the city. Let me take you on a culinary journey you'll never forget."</p>
@@ -133,7 +154,7 @@
                     </div>
                 </div>
                 <div class="team-card">
-                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Zhang">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Zhang" loading="lazy">
                     <h3>David Zhang</h3>
                     <span class="team-role">History &amp; Culture Guide</span>
                     <p>"Shanghai has 6000 years of history. I love bringing the stories behind the buildings and streets to life."</p>
@@ -144,7 +165,7 @@
                     </div>
                 </div>
                 <div class="team-card">
-                    <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="Mia Chen">
+                    <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="Mia Chen" loading="lazy">
                     <h3>Mia Chen</h3>
                     <span class="team-role">Photography &amp; Art Tour Guide</span>
                     <p>"Shanghai is a photographer's paradise. I'll show you the most Instagrammable spots and hidden art galleries."</p>
@@ -155,7 +176,7 @@
                     </div>
                 </div>
                 <div class="team-card">
-                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Tommy Li">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Tommy Li" loading="lazy">
                     <h3>Tommy Li</h3>
                     <span class="team-role">Adventure &amp; Day Trip Guide</span>
                     <p>"From water towns to hiking trails around Shanghai, I love showing travelers the natural beauty near our city."</p>
@@ -238,6 +259,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
