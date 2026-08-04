@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawk.to Webhook 飞书通知 - 部署指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f6fa;
+            color: #2d3436;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header {
+            background: linear-gradient(135deg, #C8102E, #e74c3c);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 16px; }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #C8102E;
+            border-radius: 0 8px 8px 0;
+        }
+        .step-num {
+            display: inline-block;
+            background: #C8102E;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .code {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .code .comment { color: #636e72; }
+        .code .string { color: #55efc4; }
+        .code .keyword { color: #74b9ff; }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        .note-warn {
+            background: #fce4e4;
+            border: 1px solid #fab1a0;
+        }
+        .note-info {
+            background: #e3f2fd;
+            border: 1px solid #74b9ff;
+        }
+        .note-success {
+            background: #e8f5e9;
+            border: 1px solid #55efc4;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .badge-feishu { background: #3370ff; }
+        .badge-cf { background: #f38020; }
+        .badge-tawk { background: #00b8a9; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 10px 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        th { background: #f8f9fa; font-weight: 600; }
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .flow-node {
+            text-align: center;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            min-width: 120px;
+        }
+        .flow-arrow { font-size: 24px; color: #b2bec3; }
+        .event-card {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .event-start { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+        .event-end { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+        .event-transcript { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+        .event-ticket { background: #fce4ec; color: #c62828; border: 1px solid #ef9a9a; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Tawk.to Webhook → 飞书通知</h1>
+        <p>Cloudflare Worker 部署指南 · Shanghai Wonder Tours</p>
+    </div>
+
+    <!-- Overview -->
+    <div class="section">
+        <h2>📋 架构概览</h2>
+        <div class="flow-diagram">
+            <div class="flow-node" style="background: #00b8a9;">Tawk.to<br><small>聊天事件</small></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node" style="background: #f38020;">Cloudflare<br>Worker</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node" style="background: #3370ff;">飞书群<br><small>消息卡片</small></div>
+        </div>
+        <p>当客户在网站上开始聊天、结束聊天、生成聊天记录或创建工单时，Tawk.to 会发送 webhook 到 Cloudflare Worker，Worker 将事件格式化为飞书消息卡片并推送到你的飞书群。</p>
+        
+        <h3 style="margin-top:20px;">支持的 4 种事件：</h3>
+        <div>
+            <span class="event-card event-start">chat:start 💬 聊天开始</span>
+            <span class="event-card event-end">chat:end 🔚 聊天结束</span>
+            <span class="event-card event-transcript">chat:transcript_created 📝 聊天记录</span>
+            <span class="event-card event-ticket">ticket:create 🎫 新工单</span>
+        </div>
+    </div>
+
+    <!-- Step 1: Create Feishu Bot -->
+    <div class="section">
+        <h2><span class="badge badge-feishu">飞书</span> 第一步：创建飞书自定义机器人</h2>
+        
+        <div class="step">
+            <span class="step-num">1</span>打开飞书，进入你要接收通知的<strong>群聊</strong>（或新建一个群）
+        </div>
+        <div class="step">
+            <span class="step-num">2</span>点击群聊右上角的 <strong>「···」</strong> → <strong>「设置」</strong> → <strong>「群机器人」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">3</span>点击 <strong>「添加机器人」</strong> → 选择 <strong>「自定义机器人」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">4</span>设置机器人名称（如 <strong>"Tawk 聊天通知"</strong>）和描述
+        </div>
+        <div class="step">
+            <span class="step-num">5</span>点击 <strong>「添加」</strong>，复制生成的 <strong>Webhook URL</strong>：
+        </div>
+        <div class="code">https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</div>
+        
+        <div class="note note-warn">
+            ⚠️ <strong>重要：</strong>请保存好这个 URL，后面部署 Worker 时需要配置。不要泄露给他人。
+        </div>
+
+        <div class="step">
+            <span class="step-num">6</span>（可选）在机器人安全设置中，可以选择 <strong>「自定义关键词」</strong>，设置为 <code>Tawk</code>，只接收包含该关键词的消息
+        </div>
+    </div>
+
+    <!-- Step 2: Deploy Worker -->
+    <div class="section">
+        <h2><span class="badge badge-cf">CF</span> 第二步：部署 Cloudflare Worker</h2>
+        
+        <p style="margin-bottom:15px;">有两种部署方式，选择适合你的：</p>
+
+        <h3 style="margin: 20px 0 10px;">方式 A：通过 Dashboard 在线部署（推荐，无需安装工具）</h3>
+        
+        <div class="step">
+            <span class="step-num">1</span>登录 <a href="https://dash.cloudflare.com" target="_blank">Cloudflare Dashboard</a> → 左侧菜单 <strong>「Workers & Pages」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">2</span>点击 <strong>「Create Worker」</strong> → 给 Worker 命名为 <code>tawk-webhook-feishu</code>
+        </div>
+        <div class="step">
+            <span class="step-num">3</span>将 <code>cloudflare-worker/tawk-webhook-feishu/src/index.js</code> 的完整代码粘贴到编辑器中
+        </div>
+        <div class="step">
+            <span class="step-num">4</span>点击 <strong>「Save and deploy」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">5</span>进入 Worker 的 <strong>「Settings」</strong> → <strong>「Variables」</strong>，添加环境变量：
+        </div>
+
+        <table>
+            <thead>
+                <tr><th>变量名</th><th>值</th><th>类型</th><th>说明</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>FEISHU_WEBHOOK_URL</code></td>
+                    <td>第一步获取的飞书机器人 URL</td>
+                    <td><strong>Secret</strong></td>
+                    <td>必填</td>
+                </tr>
+                <tr>
+                    <td><code>TAWK_WEBHOOK_SECRET</code></td>
+                    <td>Tawk.to Dashboard 中创建 webhook 时显示的密钥</td>
+                    <td><strong>Secret</strong></td>
+                    <td>选填（用于签名验证）</td>
+                </tr>
+                <tr>
+                    <td><code>NOTIFICATION_LANG</code></td>
+                    <td>zh</td>
+                    <td>Text</td>
+                    <td>通知语言，默认中文</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="step">
+            <span class="step-num">6</span>保存后，记录 Worker 的 URL：
+        </div>
+        <div class="code">https://tawk-webhook-feishu.<你的子域名>.workers.dev</div>
+
+        <h3 style="margin: 20px 0 10px;">方式 B：通过 Wrangler CLI 部署</h3>
+        <div class="code">
+<span class="comment"># 进入 Worker 目录</span>
+<span class="keyword">cd</span> cloudflare-worker/tawk-webhook-feishu
+
+<span class="comment"># 安装 wrangler</span>
+npm install -g wrangler
+
+<span class="comment"># 登录 Cloudflare</span>
+wrangler login
+
+<span class="comment"># 配置环境变量（需要输入值）</span>
+wrangler secret put FEISHU_WEBHOOK_URL
+<span class="comment"># 粘贴飞书机器人 URL，回车</span>
+
+wrangler secret put TAWK_WEBHOOK_SECRET
+<span class="comment"># 粘贴 Tawk.to webhook 密钥，回车（可选）</span>
+
+<span class="comment"># 部署</span>
+wrangler deploy
+        </div>
+    </div>
+
+    <!-- Step 3: Tawk.to Dashboard -->
+    <div class="section">
+        <h2><span class="badge badge-tawk">Tawk</span> 第三步：在 Tawk.to 创建 Webhook</h2>
+        
+        <div class="step">
+            <span class="step-num">1</span>登录 <a href="https://dashboard.tawk.to" target="_blank">Tawk.to Dashboard</a>
+        </div>
+        <div class="step">
+            <span class="step-num">2</span>选择正确的 Property（<strong>Shanghai Wonder Tours</strong>）
+        </div>
+        <div class="step">
+            <span class="step-num">3</span>左侧导航点击 <strong>「Administration」</strong> → <strong>「Webhooks」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">4</span>点击 <strong>「Create Webhook」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">5</span>填写表单：
+        </div>
+        
+        <table>
+            <tbody>
+                <tr><td><strong>Name</strong></td><td>飞书通知</td></tr>
+                <tr><td><strong>Endpoint URL</strong></td><td>https://tawk-webhook-feishu.<你的子域名>.workers.dev</td></tr>
+                <tr><td><strong>Events</strong></td><td>勾选全部 4 项（见下方）</td></tr>
+            </tbody>
+        </table>
+
+        <div class="note note-info">
+            📌 <strong>勾选以下事件：</strong><br>
+            ☑ <strong>Chat Start</strong> — 客户开始聊天时通知<br>
+            ☑ <strong>Chat End</strong> — 聊天结束时通知<br>
+            ☑ <strong>New Chat Transcript</strong> — 聊天记录生成后通知（含完整对话）<br>
+            ☑ <strong>New Ticket</strong> — 新工单创建时通知
+        </div>
+
+        <div class="step">
+            <span class="step-num">6</span>点击 <strong>「Save」</strong>
+        </div>
+        <div class="step">
+            <span class="step-num">7</span>保存后会显示 <strong>Webhook Secret Key</strong>，复制它：
+        </div>
+        <div class="code">Webhook Secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+
+        <div class="note note-warn">
+            ⚠️ <strong>重要：</strong>回到 Cloudflare Worker 设置，将这个 Secret Key 填入 <code>TAWK_WEBHOOK_SECRET</code> 环境变量，用于验证 webhook 来源真实性。
+        </div>
+    </div>
+
+    <!-- Step 4: Test -->
+    <div class="section">
+        <h2>✅ 第四步：测试</h2>
+        
+        <div class="step">
+            <span class="step-num">1</span>打开你的网站 <a href="https://shanghawondertours.com" target="_blank">shanghawondertours.com</a>
+        </div>
+        <div class="step">
+            <span class="step-num">2</span>点击右下角 Tawk.to 聊天窗口，发送一条消息
+        </div>
+        <div class="step">
+            <span class="step-num">3</span>检查飞书群是否收到 <strong>"💬 聊天开始"</strong> 消息卡片
+        </div>
+        <div class="step">
+            <span class="step-num">4</span>关闭聊天窗口，等待 3 分钟后检查是否收到 <strong>"📝 聊天记录"</strong> 消息卡片（含完整对话内容）
+        </div>
+
+        <div class="note note-success">
+            ✅ 如果飞书群收到消息卡片，说明配置成功！<br>
+            ❌ 如果没有收到，检查：<br>
+            &nbsp;&nbsp;1. Cloudflare Worker 环境变量是否正确设置<br>
+            &nbsp;&nbsp;2. Tawk.to webhook URL 是否指向正确的 Worker 地址<br>
+            &nbsp;&nbsp;3. 飞书机器人 URL 是否正确<br>
+            &nbsp;&nbsp;4. 在 Cloudflare Worker 的 "Logs" 中查看实时日志
+        </div>
+    </div>
+
+    <!-- Message Preview -->
+    <div class="section">
+        <h2>📲 飞书消息预览</h2>
+        <p>以下是各种事件在飞书群中显示的效果：</p>
+
+        <div style="background:#f8f9fa; border-radius:12px; padding:20px; margin:15px 0;">
+            <div style="background:white; border-radius:10px; padding:15px; margin-bottom:10px; border-left:4px solid #00b8a9;">
+                <strong style="color:#00b8a9;">💬 聊天开始</strong>
+                <hr style="border:none; border-top:1px solid #f0f0f0; margin:8px 0;">
+                <strong>访客</strong> V1561719148780935<br>
+                <strong>地区</strong> Shanghai, CN<br>
+                <strong>时间</strong> 2026-08-05 14:03<br>
+                <strong>来源</strong> https://www.google.com/<br>
+                <strong>首条消息 (访客):</strong> 你好，我想了解上海一日游
+            </div>
+
+            <div style="background:white; border-radius:10px; padding:15px; margin-bottom:10px; border-left:4px solid #e74c3c;">
+                <strong style="color:#e74c3c;">🎫 新工单</strong>
+                <hr style="border:none; border-top:1px solid #f0f0f0; margin:8px 0;">
+                <strong>访客</strong> John Smith<br>
+                <strong>邮箱</strong> john@example.com<br>
+                <strong>工单号</strong> #3<br>
+                <strong>主题</strong> 预订咨询<br>
+                <strong>内容:</strong> 请问8月份有上海到苏州的团吗？
+            </div>
+
+            <div style="background:white; border-radius:10px; padding:15px; border-left:4px solid #3370ff;">
+                <strong style="color:#3370ff;">📝 聊天记录</strong>
+                <hr style="border:none; border-top:1px solid #f0f0f0; margin:8px 0;">
+                <strong>访客</strong> V1561719148780935<br>
+                <strong>地区</strong> Shanghai, CN<br>
+                <strong>聊天记录:</strong><br>
+                [14:03] <strong>客服</strong>: 👋 您好！有什么可以帮您？<br>
+                [14:04] <strong>访客</strong>: 想了解上海一日游的价格<br>
+                [14:05] <strong>客服</strong>: 我们有多个一日游路线...
+            </div>
+        </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="section">
+        <h2>🔧 故障排查</h2>
+        
+        <table>
+            <thead>
+                <tr><th>问题</th><th>解决方法</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>飞书没有收到消息</td>
+                    <td>1. 检查 Worker 日志：Dashboard → Workers → tawk-webhook-feishu → Logs<br>2. 确认 FEISHU_WEBHOOK_URL 正确<br>3. 在浏览器中直接 POST 测试飞书 URL</td>
+                </tr>
+                <tr>
+                    <td>Worker 返回 401</td>
+                    <td>签名验证失败。确保 TAWK_WEBHOOK_SECRET 与 Tawk.to Dashboard 中显示的一致。如不需要验证，留空即可。</td>
+                </tr>
+                <tr>
+                    <td>飞书返回 code: 19021</td>
+                    <td>关键词校验失败。在飞书机器人设置中，安全设置改为"自定义关键词"并填入"Tawk"或关闭关键词校验。</td>
+                </tr>
+                <tr>
+                    <td>飞书消息太长被截断</td>
+                    <td>聊天记录超过 20 条消息时自动截断。如需更多，修改 Worker 中 maxMessages 的值。</td>
+                </tr>
+                <tr>
+                    <td>Tawk.to 重试多次</td>
+                    <td>Worker 响应超过 30 秒或返回非 2XX。检查 Worker 是否正常部署。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- File Structure -->
+    <div class="section">
+        <h2>📁 文件结构</h2>
+        <div class="code">
+cloudflare-worker/
+└── tawk-webhook-feishu/
+    ├── src/
+    │   └── index.js       <span class="comment"># Worker 主代码</span>
+    ├── package.json       <span class="comment"># npm 配置</span>
+    └── wrangler.toml      <span class="comment"># Cloudflare Worker 配置</span>
+        </div>
+    </div>
+
+    <div style="text-align:center; padding: 20px; color: #b2bec3; font-size: 14px;">
+        Shanghai Wonder Tours · Tawk.to Webhook 飞书通知配置指南
+    </div>
+</div>
+</body>
+</html>
