@@ -1,6 +1,12 @@
+# robots.txt for Shanghai Wonder Tours
+# https://shanghawondertours.com/
+
 User-agent: *
 Allow: /
-Sitemap: https://shanghaitours.com/sitemap.xml
 
-# Disallow admin or private areas
-Disallow: /private/
+# Block crawl of helper scripts
+Disallow: /*.py
+Disallow: /*.md
+
+# Sitemap
+Sitemap: https://shanghawondertours.com/sitemap.xml
