@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawk.to Dashboard Configuration Guide - Shanghai Wonder Tours</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #c8102e;
+            font-size: 28px;
+            margin-bottom: 8px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #c8102e;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #1a1a2e;
+            font-size: 22px;
+            margin: 30px 0 12px;
+            padding-left: 12px;
+            border-left: 4px solid #c8102e;
+        }
+        h3 {
+            color: #16213e;
+            font-size: 17px;
+            margin: 20px 0 8px;
+        }
+        p { margin-bottom: 12px; color: #444; }
+        ol, ul { margin-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 6px; }
+        .info-box {
+            background: #e8f4fd;
+            border-left: 4px solid #2196f3;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 6px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 6px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 6px;
+        }
+        .config-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .config-card h4 {
+            color: #c8102e;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 13px;
+            font-family: 'Consolas', monospace;
+        }
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .nav-tab {
+            padding: 8px 16px;
+            background: #e8e8e8;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .nav-tab:hover {
+            background: #c8102e;
+            color: #fff;
+        }
+        .section {
+            scroll-margin-top: 20px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .tag-dashboard { background: #e3f2fd; color: #1565c0; }
+        .tag-js { background: #e8f5e9; color: #2e7d32; }
+        .tag-done { background: #d4edda; color: #155724; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+        .emoji { font-size: 18px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Tawk.to Dashboard Configuration Guide</h1>
+    <p class="subtitle">Shanghai Wonder Tours | Property ID: 6a7221676677831d43f6c037 | Widget: 1jv6t4vgs</p>
+
+    <div class="info-box">
+        <strong>API Key (Secure Mode):</strong> <code>3e4a97c698741711b5857e136e1f5ad3a5939d5b</code><br>
+        <strong>Status:</strong> JavaScript API <span class="tag tag-done">DONE</span> | Dashboard Settings <span class="tag tag-dashboard">MANUAL</span>
+    </div>
+
+    <div class="nav-tabs">
+        <a class="nav-tab" href="#section1">1. Welcome Messages</a>
+        <a class="nav-tab" href="#section2">2. Branding & Appearance</a>
+        <a class="nav-tab" href="#section3">3. Pre-chat Form</a>
+        <a class="nav-tab" href="#section4">4. Knowledge Base</a>
+        <a class="nav-tab" href="#section5">5. Operating Hours</a>
+        <a class="nav-tab" href="#section6">6. Shortcuts / Auto-Replies</a>
+        <a class="nav-tab" href="#section7">7. JavaScript API (Done)</a>
+    </div>
+
+    <!-- Section 1: Welcome Messages -->
+    <div class="section" id="section1">
+        <h2>1. Welcome Messages <span class="tag tag-dashboard">Dashboard</span></h2>
+        <p>Configure greeting messages that visitors see when they open the chat widget.</p>
+
+        <div class="config-card">
+            <h4>Path: Settings → Chat Widget → Content</h4>
+            <h3>Online Welcome Message</h3>
+            <p>Set the message visitors see when agents are online:</p>
+            <div class="info-box">
+                "Welcome to Shanghai Wonder Tours! 🏮<br>
+                We're here to help you plan your perfect Shanghai adventure.<br>
+                Ask us about private tours, water town trips, or custom itineraries!"
+            </div>
+
+            <h3>Offline Welcome Message</h3>
+            <p>Set the message visitors see when agents are offline:</p>
+            <div class="info-box">
+                "Thanks for visiting Shanghai Wonder Tours! 🏮<br>
+                We're currently offline, but please leave us a message and we'll get back to you within 24 hours.<br>
+                For urgent matters, WhatsApp: +86 15347723823"
+            </div>
+
+            <h3>Channel Description</h3>
+            <div class="info-box">
+                "Shanghai Wonder Tours - Expert local guides for private Shanghai tours, water town trips, and customized China travel experiences."
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Branding -->
+    <div class="section" id="section2">
+        <h2>2. Branding & Appearance <span class="tag tag-dashboard">Dashboard</span></h2>
+        <p>Customize the chat widget to match the Shanghai Wonder Tours brand.</p>
+
+        <div class="config-card">
+            <h4>Path: Settings → Chat Widget → Appearance</h4>
+
+            <table>
+                <tr><th>Setting</th><th>Value</th></tr>
+                <tr><td>Widget Title</td><td>Shanghai Wonder Tours</td></tr>
+                <tr><td>Primary Color (Header)</td><td>#C8102E (Shanghai Red)</td></tr>
+                <tr><td>Background Color</td><td>#FFFFFF</td></tr>
+                <tr><td>Text Color</td><td>#333333</td></tr>
+                <tr><td>Font Family</td><td>Inter, sans-serif</td></tr>
+                <tr><td>Border Radius</td><td>8px</td></tr>
+                <tr><td>Widget Position</td><td>Bottom Right</td></tr>
+                <tr><td>Widget Style</td><td>Modern / Rounded</td></tr>
+            </table>
+
+            <h3>Logo</h3>
+            <p>Upload the Shanghai Wonder Tours logo (recommended: 200x200px PNG with transparent background). Use the red lantern icon (🏮) as favicon if no logo is available.</p>
+
+            <h3>Chat Bubble</h3>
+            <table>
+                <tr><th>Setting</th><th>Value</th></tr>
+                <tr><td>Bubble Type</td><td>Text + Icon</td></tr>
+                <tr><td>Bubble Text</td><td>Chat with us</td></tr>
+                <tr><td>Bubble Color</td><td>#C8102E</td></tr>
+                <tr><td>Bubble Position</td><td>Bottom Right</td></tr>
+                <tr><td>Offset X</td><td>20px</td></tr>
+                <tr><td>Offset Y</td><td>20px</td></tr>
+            </table>
+        </div>
+
+        <div class="config-card">
+            <h4>Path: Settings → Chat Widget → Advanced</h4>
+            <h3>Custom CSS (optional)</h3>
+            <p>Add custom CSS to further style the widget:</p>
+            <div class="info-box">
+<code>
+/* Match brand colors */
+#tawkchat-container .header-text { font-weight: 600 !important; }
+.widgetHeader { background-color: #c8102e !important; }
+</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Pre-chat Form -->
+    <div class="section" id="section3">
+        <h2>3. Pre-chat Form <span class="tag tag-dashboard">Dashboard</span></h2>
+        <p>Collect visitor information before they start a chat.</p>
+
+        <div class="config-card">
+            <h4>Path: Settings → Chat Widget → Pre-Chat Form</h4>
+
+            <h3>Enable Pre-chat Form: YES</h3>
+
+            <h3>Form Fields</h3>
+            <table>
+                <tr><th>Field</th><th>Type</th><th>Required</th><th>Label</th></tr>
+                <tr><td>Name</td><td>Text</td><td>Yes</td><td>Your Name</td></tr>
+                <tr><td>Email</td><td>Email</td><td>Yes</td><td>Email Address</td></tr>
+                <tr><td>Phone</td><td>Text</td><td>No</td><td>Phone / WhatsApp Number</td></tr>
+                <tr><td>Travel Date</td><td>Text</td><td>No</td><td>Approximate Travel Date</td></tr>
+                <tr><td>Message</td><td>Textarea</td><td>No</td><td>How can we help you?</td></tr>
+            </table>
+
+            <h3>Pre-chat Form Message</h3>
+            <div class="info-box">
+                "Welcome to Shanghai Wonder Tours! Please fill in your details so we can better assist you with your Shanghai tour plans."
+            </div>
+
+            <h3>Options</h3>
+            <ul>
+                <li>Show form when: "Visitor maximizes the widget"</li>
+                <li>Require form: "Before chat begins"</li>
+                <li>Department selection: Enable if you set up departments</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>Note:</strong> The JavaScript API already tracks visitor attributes automatically. The pre-chat form provides additional information for agents.
+        </div>
+    </div>
+
+    <!-- Section 4: Knowledge Base -->
+    <div class="section" id="section4">
+        <h2>4. Knowledge Base <span class="tag tag-dashboard">Dashboard</span></h2>
+        <p>Create self-service articles that visitors can browse without starting a chat.</p>
+
+        <div class="config-card">
+            <h4>Path: Knowledge Base → Articles</h4>
+
+            <h3>Recommended Categories</h3>
+            <table>
+                <tr><th>Category</th><th>Description</th></tr>
+                <tr><td>Tour Booking</td><td>How to book, payment methods, cancellation policy</td></tr>
+                <tr><td>Tour Types</td><td>Private tours, group tours, day trips, multi-day tours</td></tr>
+                <tr><td>Destinations</td><td>Shanghai, Suzhou, Hangzhou, Zhujiajiao, Huangshan</td></tr>
+                <tr><td>Practical Info</td><td>Visa, weather, transportation, language tips</td></tr>
+                <tr><td>Pricing & Payment</td><td>Tour pricing, deposit, payment methods</td></tr>
+            </table>
+
+            <h3>Recommended Articles to Create</h3>
+            <ol>
+                <li><strong>How to Book a Shanghai Tour</strong> - Step-by-step booking guide</li>
+                <li><strong>Private vs. Group Tours - Which is Right for You?</strong></li>
+                <li><strong>Top 10 Shanghai Attractions</strong> - Must-visit places</li>
+                <li><strong>Shanghai Day Trips Guide</strong> - Suzhou, Hangzhou, water towns</li>
+                <li><strong>What to Pack for Shanghai</strong> - Seasonal packing tips</li>
+                <li><strong>Visa Requirements for China</strong> - Visa-free transit, tourist visa</li>
+                <li><strong>Best Time to Visit Shanghai</strong> - Season-by-season guide</li>
+                <li><strong>Payment Methods Accepted</strong> - PayPal, bank transfer, WeChat Pay</li>
+                <li><strong>Cancellation & Refund Policy</strong> - Cancellation terms</li>
+                <li><strong>Shanghai Airport Transfer Guide</strong> - PVG & SHA airports</li>
+            </ol>
+
+            <h3>Enable Knowledge Base in Widget</h3>
+            <ul>
+                <li>Path: Settings → Chat Widget → Knowledge Base</li>
+                <li>Toggle: "Show Knowledge Base in chat widget"</li>
+                <li>Select categories to display</li>
+                <li>Set article display order</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 5: Operating Hours -->
+    <div class="section" id="section5">
+        <h2>5. Operating Hours <span class="tag tag-dashboard">Dashboard</span></h2>
+        <p>Set when your team is available for live chat.</p>
+
+        <div class="config-card">
+            <h4>Path: Settings → Chat Widget → Schedule</h4>
+
+            <h3>Enable Schedule: YES</h3>
+
+            <table>
+                <tr><th>Day</th><th>Hours (Beijing Time, UTC+8)</th><th>Hours (UTC)</th></tr>
+                <tr><td>Monday - Friday</td><td>9:00 AM - 9:00 PM</td><td>1:00 AM - 1:00 PM</td></tr>
+                <tr><td>Saturday</td><td>10:00 AM - 6:00 PM</td><td>2:00 AM - 10:00 AM</td></tr>
+                <tr><td>Sunday</td><td>10:00 AM - 6:00 PM</td><td>2:00 AM - 10:00 AM</td></tr>
+            </table>
+
+            <div class="info-box">
+                <strong>Timezone:</strong> Asia/Shanghai (UTC+8)<br>
+                <strong>Note:</strong> Even outside operating hours, visitors can leave messages. The offline welcome message will be displayed.
+            </div>
+
+            <h3>Outside Operating Hours</h3>
+            <ul>
+                <li>Show offline form: YES</li>
+                <li>Offline message: "We're currently offline. Please leave a message and we'll respond within 24 hours."</li>
+                <li>Display WhatsApp number: "+86 15347723823"</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 6: Shortcuts / Auto-Replies -->
+    <div class="section" id="section6">
+        <h2>6. Shortcuts / Auto-Replies <span class="tag tag-dashboard">Dashboard</span></h2>
+        <p>Set up quick reply templates for common questions.</p>
+
+        <div class="config-card">
+            <h4>Path: Settings → Chat → Shortcuts</h4>
+
+            <table>
+                <tr><th>Shortcut</th><th>Message Content</th></tr>
+                <tr>
+                    <td><code>/welcome</code></td>
+                    <td>"Hi! Welcome to Shanghai Wonder Tours! I'd be happy to help you plan your Shanghai trip. What type of tour are you interested in?"</td>
+                </tr>
+                <tr>
+                    <td><code>/price</code></td>
+                    <td>"Our private Shanghai tours start from $89 per person for half-day tours. Full-day tours start from $159. Multi-day packages are also available. Would you like a detailed quote?"</td>
+                </tr>
+                <tr>
+                    <td><code>/contact</code></td>
+                    <td>"You can reach us via:\nWhatsApp/Phone: +86 15347723823\nWeChat ID: chinawondertours\nEmail: info@shanghawondertours.com"</td>
+                </tr>
+                <tr>
+                    <td><code>/payment</code></td>
+                    <td>"We accept PayPal, bank transfer, and WeChat Pay. A 30% deposit is required to confirm your booking, with the balance due before the tour date."</td>
+                </tr>
+                <tr>
+                    <td><code>/cancel</code></td>
+                    <td>"Free cancellation up to 72 hours before your tour. Cancellations within 72 hours are subject to a 50% fee. No-shows are non-refundable."</td>
+                </tr>
+                <tr>
+                    <td><code>/languages</code></td>
+                    <td>"Our tours are available in English and Chinese. We can also arrange guides for French, Spanish, German, and Japanese speakers upon request."</td>
+                </tr>
+                <tr>
+                    <td><code>/pickup</code></td>
+                    <td>"We offer free hotel pickup within central Shanghai for all private tours. Airport/cruise port pickup is available for an additional fee."</td>
+                </tr>
+                <tr>
+                    <td><code>/custom</code></td>
+                    <td>"Yes! All our tours can be customized to your preferences. Tell us your interests, travel dates, and group size, and we'll create a personalized itinerary for you."</td>
+                </tr>
+                <tr>
+                    <td><code>/water</code></td>
+                    <td>"Water town tours (Zhujiajiao, Tongli, Zhouzhuang) are available as half-day or full-day trips from Shanghai. They include traditional boat rides, ancient architecture, and local cuisine."</td>
+                </tr>
+                <tr>
+                    <td><code>/multiday</code></td>
+                    <td>"Our multi-day tours include 2-5 day packages covering Shanghai + Suzhou, Hangzhou, Huangshan, and more. All include private guide, transportation, and hotels."</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Section 7: JavaScript API (Already Done) -->
+    <div class="section" id="section7">
+        <h2>7. JavaScript API Configuration <span class="tag tag-done">Completed</span></h2>
+        <p>The following features have been implemented in <code>js/tawk-config.js</code> and are already active on all 31 pages:</p>
+
+        <div class="success-box">
+            <h3>✅ Visitor Information Tracking</h3>
+            <ul>
+                <li><strong>Page Type:</strong> Homepage, Tours Listing, Tour Detail, Contact, About, FAQ</li>
+                <li><strong>Current Page:</strong> Page title automatically captured</li>
+                <li><strong>Page URL:</strong> Full URL of current page</li>
+                <li><strong>Language:</strong> en (auto-detected from HTML lang attribute)</li>
+                <li><strong>Device:</strong> Mobile / Desktop (auto-detected)</li>
+                <li><strong>Traffic Source:</strong> Google, Bing, Social Media, Direct, Internal</li>
+                <li><strong>Tour Viewed:</strong> Tour name extracted from page heading</li>
+                <li><strong>Website:</strong> Shanghai Wonder Tours</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Event Tracking</h3>
+            <ul>
+                <li><strong>page-view:</strong Logged on every page load with page details</li>
+                <li><strong>tour-detail-view:</strong> Specific event when viewing a tour page</li>
+                <li><strong>chat-widget-opened:</strong> When visitor opens the chat</li>
+                <li><strong>booking-intent:</strong> When visitor clicks a booking/contact button</li>
+                <li><strong>pdf-download-clicked:</strong> When visitor clicks the PDF download button</li>
+                <li><strong>form-submitted:</strong> When visitor submits any form</li>
+                <li><strong>contact-channel-clicked:</strong> When WhatsApp/WeChat links are clicked</li>
+                <li><strong>chat-ended:</strong> When a chat ends, with duration</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Chat Lifecycle Callbacks</h3>
+            <ul>
+                <li><strong>onLoad:</strong> Sets visitor attributes and logs page view</li>
+                <li><strong>onStatusChange:</strong> Tracks agent online/offline status</li>
+                <li><strong>onChatMaximized:</strong> Tracks widget open (sends to Google Analytics)</li>
+                <li><strong>onChatMinimized:</strong> Tracks widget close</li>
+                <li><strong>onChatBegin:</strong> Tracks when chat begins</li>
+                <li><strong>onChatStart:</strong> Tracks when agent responds</li>
+                <li><strong>onChatEnd:</strong> Tracks chat end with duration</li>
+                <li><strong>onUnreadCountChanged:</strong> Tracks unread messages</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Auto-Popup Behavior</h3>
+            <ul>
+                <li><strong>Tour Detail Pages (Desktop):</strong> Auto-opens chat after 30 seconds</li>
+                <li><strong>Homepage (Desktop):</strong> Auto-opens chat after 45 seconds</li>
+                <li><strong>Session Memory:</strong> Only shows once per session (uses sessionStorage)</li>
+                <li><strong>Mobile:</strong> No auto-popup (to avoid disrupting mobile experience)</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Google Analytics Integration</h3>
+            <p>All chat events are automatically sent to Google Analytics (GA4) if the gtag function is available. Events tracked:</p>
+            <ul>
+                <li><code>tawk_status_change</code></li>
+                <li><code>tawk_chat_opened</code></li>
+                <li><code>tawk_chat_minimized</code></li>
+                <li><code>tawk_chat_began</code></li>
+                <li><code>tawk_chat_started</code></li>
+                <li><code>tawk_chat_ended</code></li>
+                <li><code>tawk_visitor_message</code></li>
+                <li><code>tawk_unread_message</code></li>
+            </ul>
+            <p><strong>Note:</strong> Google Analytics GA4 ID (G-XXXXXXXXXX) still needs to be added to the website for this to work.</p>
+        </div>
+    </div>
+
+    <!-- API Key Info -->
+    <div class="section">
+        <h2>API Key Information</h2>
+        <div class="info-box">
+            <p><strong>API Key:</strong> <code>3e4a97c698741711b5857e136e1f5ad3a5939d5b</code></p>
+            <p>This key is found in Tawk.to Dashboard → Profile → REST API Keys. To use the REST API for server-side automation (e.g., automatically creating knowledge base articles, managing agents), you need to:</p>
+            <ol>
+                <li>Go to <strong>Tawk.to Dashboard → Profile → REST API</strong></li>
+                <li>Submit the <strong>REST API Access Request Form</strong></li>
+                <li>Wait for approval (usually 1-3 business days)</li>
+                <li>Once approved, use the key with HTTP Basic Auth: <code>Authorization: Basic base64(api_key:f)</code></li>
+            </ol>
+            <p><strong>Base URL:</strong> <code>https://api.tawk.to/v1/</code></p>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="section">
+        <h2>Summary</h2>
+        <table>
+            <tr><th>Task</th><th>Method</th><th>Status</th></tr>
+            <tr><td>Visitor Information Tracking</td><td>JavaScript API</td><td>✅ Done</td></tr>
+            <tr><td>Event Tracking</td><td>JavaScript API</td><td>✅ Done</td></tr>
+            <tr><td>Chat Lifecycle Callbacks</td><td>JavaScript API</td><td>✅ Done</td></tr>
+            <tr><td>Auto-Popup Behavior</td><td>JavaScript API</td><td>✅ Done</td></tr>
+            <tr><td>Google Analytics Integration</td><td>JavaScript API</td><td>✅ Done (needs GA4 ID)</td></tr>
+            <tr><td>Welcome Messages</td><td>Dashboard</td><td>📋 Manual Setup</td></tr>
+            <tr><td>Branding & Appearance</td><td>Dashboard</td><td>📋 Manual Setup</td></tr>
+            <tr><td>Pre-chat Form</td><td>Dashboard</td><td>📋 Manual Setup</td></tr>
+            <tr><td>Knowledge Base</td><td>Dashboard</td><td>📋 Manual Setup</td></tr>
+            <tr><td>Operating Hours</td><td>Dashboard</td><td>📋 Manual Setup</td></tr>
+            <tr><td>Shortcuts / Auto-Replies</td><td>Dashboard</td><td>📋 Manual Setup</td></tr>
+        </table>
+
+        <div class="success-box">
+            <strong>Next Steps:</strong>
+            <ol>
+                <li>Log into <a href="https://dashboard.tawk.to" target="_blank">Tawk.to Dashboard</a></li>
+                <li>Follow the guide above to configure items 1-6</li>
+                <li>Provide GA4 ID to complete Google Analytics integration</li>
+                <li>Request REST API access if you want server-side automation</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
