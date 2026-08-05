@@ -2,11 +2,11 @@ name = "tawk-webhook-feishu"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
 
-# Environment Variables
-# Set these in Cloudflare Dashboard or via wrangler:
-#   wrangler secret put FEISHU_WEBHOOK_URL
+# Environment Variables — set via wrangler secret or Cloudflare Dashboard:
+#   wrangler secret put FEISHU_APP_ID
+#   wrangler secret put FEISHU_APP_SECRET
+#   wrangler secret put FEISHU_CHAT_ID
 #   wrangler secret put TAWK_WEBHOOK_SECRET
-#   wrangler secret put NOTIFICATION_LANG
 
 [vars]
 NOTIFICATION_LANG = "zh"

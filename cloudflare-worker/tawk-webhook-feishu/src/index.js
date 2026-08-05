@@ -1,28 +1,31 @@
 /**
- * Tawk.to Webhook → Feishu (Lark) Notification Worker
- * 
- * Receives Tawk.to webhook events and forwards them as Feishu message cards.
- * 
+ * Tawk.to Webhook → Feishu (Lark) App API Notification Worker
+ *
+ * Uses Feishu Open API to send interactive card messages to a group chat.
+ * More powerful than custom bot webhook: supports interactive cards, rich content.
+ *
  * Events supported:
  *   - chat:start              (聊天开始)
  *   - chat:end                (聊天结束)
  *   - chat:transcript_created (聊天记录生成)
  *   - ticket:create           (工单创建)
- * 
- * Environment Variables (set in Cloudflare Dashboard or wrangler.toml):
- *   FEISHU_WEBHOOK_URL  - Feishu custom bot webhook URL
- *   TAWK_WEBHOOK_SECRET  - Tawk.to webhook secret key (for signature verification)
- *   NOTIFICATION_LANG    - "zh" (default) or "en"
+ *
+ * Environment Variables (set in Cloudflare Dashboard or wrangler secret):
+ *   FEISHU_APP_ID       - Feishu App ID (cli_xxx)
+ *   FEISHU_APP_SECRET   - Feishu App Secret
+ *   FEISHU_CHAT_ID      - Target group chat ID (oc_xxx)
+ *   TAWK_WEBHOOK_SECRET - Tawk.to webhook secret key (for HMAC verification)
+ *   NOTIFICATION_LANG   - "zh" (default) or "en"
  */
 
 // ============================================================
-//  Event type labels
+//  Event type labels & colors
 // ============================================================
 const EVENT_LABELS = {
-  'chat:start': { zh: '💬 聊天开始', en: '💬 Chat Started', color: 'green' },
-  'chat:end': { zh: '🔚 聊天结束', en: '🔚 Chat Ended', color: 'orange' },
+  'chat:start': { zh: '💬 客户开始聊天', en: '💬 Chat Started', color: 'green' },
+  'chat:end': { zh: '🔚 聊天已结束', en: '🔚 Chat Ended', color: 'orange' },
   'chat:transcript_created': { zh: '📝 聊天记录', en: '📝 Chat Transcript', color: 'blue' },
-  'ticket:create': { zh: '🎫 新工单', en: '🎫 New Ticket', color: 'red' },
+  'ticket:create': { zh: '🎫 新工单创建', en: '🎫 New Ticket', color: 'red' },
 };
 
 const COLOR_MAP = {
@@ -30,10 +33,11 @@ const COLOR_MAP = {
   orange: 'orange',
   blue: 'blue',
   red: 'red',
+  grey: 'grey',
 };
 
 // ============================================================
-//  HMAC-SHA1 signature verification
+//  HMAC-SHA1 signature verification (Tawk.to webhook)
 // ============================================================
 async function verifySignature(body, signature, secret) {
   if (!secret || !signature) return true; // Skip if no secret configured
@@ -53,9 +57,47 @@ async function verifySignature(body, signature, secret) {
 }
 
 // ============================================================
-//  Build Feishu interactive card message
+//  Get Feishu tenant_access_token
 // ============================================================
-function buildFeishuCard(payload, lang) {
+async function getTenantAccessToken(appId, appSecret) {
+  const resp = await fetch('https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      app_id: appId,
+      app_secret: appSecret,
+    }),
+  });
+  const data = await resp.json();
+  if (data.code !== 0) {
+    throw new Error(`Failed to get tenant_access_token: ${data.msg || JSON.stringify(data)}`);
+  }
+  return data.tenant_access_token;
+}
+
+// ============================================================
+//  Send message to Feishu group chat via Open API
+// ============================================================
+async function sendFeishuMessage(token, chatId, msgType, content) {
+  const resp = await fetch('https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=chat_id', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      receive_id: chatId,
+      msg_type: msgType,
+      content: JSON.stringify(content),
+    }),
+  });
+  return resp.json();
+}
+
+// ============================================================
+//  Build Feishu interactive card
+// ============================================================
+function buildCard(payload, lang) {
   const event = payload.event || 'unknown';
   const label = EVENT_LABELS[event] || { zh: '📋 事件通知', en: '📋 Event Notification', color: 'grey' };
   const color = COLOR_MAP[label.color] || 'grey';
@@ -63,22 +105,7 @@ function buildFeishuCard(payload, lang) {
 
   const elements = [];
 
-  // Header
-  elements.push({
-    tag: 'div',
-    text: {
-      tag: 'lark_md',
-      content: `**${label[isZh ? 'zh' : 'en']}**`,
-    },
-  });
-
-  // Separator
-  elements.push({ tag: 'hr' });
-
   // Common fields
-  const fields = [];
-
-  // Visitor info
   const visitor = payload.visitor || (payload.chat && payload.chat.visitor) || {};
   const requester = payload.requester || {};
 
@@ -87,6 +114,8 @@ function buildFeishuCard(payload, lang) {
   const visitorCity = visitor.city || '';
   const visitorCountry = visitor.country || '';
 
+  // --- Visitor info row ---
+  const fields = [];
   fields.push({
     is_short: true,
     text: { tag: 'lark_md', content: `**${isZh ? '访客' : 'Visitor'}**\n${visitorName}` },
@@ -122,19 +151,11 @@ function buildFeishuCard(payload, lang) {
     text: { tag: 'lark_md', content: `**${isZh ? '时间' : 'Time'}**\n${timeStr}` },
   });
 
-  // Referrer
+  // Referrer / source page
   if (payload.referrer) {
     fields.push({
       is_short: false,
-      text: { tag: 'lark_md', content: `**${isZh ? '来源' : 'Referrer'}**\n${payload.referrer}` },
-    });
-  }
-
-  // Domain
-  if (payload.domain) {
-    fields.push({
-      is_short: true,
-      text: { tag: 'lark_md', content: `**${isZh ? '域名' : 'Domain'}**\n${payload.domain}` },
+      text: { tag: 'lark_md', content: `**${isZh ? '来源页面' : 'Source Page'}**\n${payload.referrer}` },
     });
   }
 
@@ -154,11 +175,13 @@ function buildFeishuCard(payload, lang) {
     });
   }
 
-  // Event-specific content
+  // --- Event-specific content ---
   if (event === 'chat:start' && payload.message) {
     const msgText = payload.message.text || '';
     const senderType = payload.message.sender ? payload.message.sender.type : '';
-    const senderLabel = senderType === 'visitor' ? (isZh ? '访客' : 'Visitor') : (isZh ? '客服' : 'Agent');
+    const senderLabel = senderType === 'visitor'
+      ? (isZh ? '访客' : 'Visitor')
+      : (isZh ? '客服' : 'Agent');
     elements.push({
       tag: 'div',
       text: {
@@ -170,20 +193,21 @@ function buildFeishuCard(payload, lang) {
 
   if (event === 'chat:transcript_created' && payload.chat && payload.chat.messages) {
     const messages = payload.chat.messages;
-    const maxMessages = 20; // Limit to avoid message too long
+    const maxMessages = 20;
     const displayMessages = messages.slice(0, maxMessages);
     let transcriptText = '';
-    
+
     for (const msg of displayMessages) {
       const sender = msg.sender || {};
-      const senderName = sender.t === 'v' 
+      const senderName = sender.t === 'v'
         ? (isZh ? '访客' : 'Visitor')
         : (sender.n || (isZh ? '客服' : 'Agent'));
       const msgContent = msg.msg || '';
-      const msgTime = msg.time ? new Date(msg.time).toLocaleTimeString(isZh ? 'zh-CN' : 'en-US', {
-        hour: '2-digit', minute: '2-digit'
-      }) : '';
-      
+      const msgTime = msg.time
+        ? new Date(msg.time).toLocaleTimeString(isZh ? 'zh-CN' : 'en-US', {
+            hour: '2-digit', minute: '2-digit',
+          })
+        : '';
       transcriptText += `[${msgTime}] **${senderName}**: ${msgContent}\n`;
     }
 
@@ -226,20 +250,34 @@ function buildFeishuCard(payload, lang) {
     }
   }
 
-  // Footer note
-  elements.push({ tag: 'hr' });
+  // --- Action button (link to Tawk.to dashboard) ---
+  elements.push({
+    tag: 'action',
+    actions: [
+      {
+        tag: 'button',
+        text: { tag: 'plain_text', content: isZh ? '前往 Tawk.to 后台回复' : 'Open Tawk.to Dashboard' },
+        type: 'primary',
+        url: 'https://dashboard.tawk.to',
+      },
+    ],
+  });
+
+  // --- Footer note ---
   elements.push({
     tag: 'note',
     elements: [
       {
         tag: 'plain_text',
-        content: isZh ? 'Shanghai Wonder Tours · Tawk.to Webhook 通知' : 'Shanghai Wonder Tours · Tawk.to Webhook Notification',
+        content: isZh
+          ? 'Shanghai Wonder Tours · Tawk.to Webhook 通知'
+          : 'Shanghai Wonder Tours · Tawk.to Webhook Notification',
       },
     ],
   });
 
-  // Build card
-  const card = {
+  // Build the card object
+  return {
     config: { wide_screen_mode: true },
     header: {
       template: color,
@@ -249,11 +287,6 @@ function buildFeishuCard(payload, lang) {
       },
     },
     elements: elements,
-  };
-
-  return {
-    msg_type: 'interactive',
-    card: card,
   };
 }
 
@@ -270,15 +303,26 @@ export default {
       });
     }
 
+    // Only allow GET for health check
+    if (request.method === 'GET') {
+      return new Response(JSON.stringify({ status: 'ok', service: 'tawk-to-feishu-worker' }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
     // Get raw body for signature verification
     const rawBody = await request.text();
     const signature = request.headers.get('X-Tawk-Signature') || '';
     const eventId = request.headers.get('X-Hook-Event-Id') || '';
+
     const secret = env.TAWK_WEBHOOK_SECRET || '';
-    const feishuUrl = env.FEISHU_WEBHOOK_URL || '';
+    const appId = env.FEISHU_APP_ID || '';
+    const appSecret = env.FEISHU_APP_SECRET || '';
+    const chatId = env.FEISHU_CHAT_ID || '';
     const lang = env.NOTIFICATION_LANG || 'zh';
 
-    // Verify signature
+    // Verify Tawk.to signature
     const isValid = await verifySignature(rawBody, signature, secret);
     if (!isValid) {
       console.log('Signature verification failed');
@@ -300,27 +344,32 @@ export default {
       });
     }
 
-    // Forward to Feishu
-    if (feishuUrl) {
-      try {
-        const feishuMessage = buildFeishuCard(payload, lang);
-        const feishuResponse = await fetch(feishuUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(feishuMessage),
-        });
+    // Check required env vars
+    if (!appId || !appSecret || !chatId) {
+      console.error('Missing required environment variables: FEISHU_APP_ID, FEISHU_APP_SECRET, FEISHU_CHAT_ID');
+      return new Response(JSON.stringify({ error: 'Server not configured' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
 
-        const feishuResult = await feishuResponse.json();
-        console.log(`Feishu response: ${JSON.stringify(feishuResult)}`);
+    // Send notification to Feishu
+    try {
+      // Step 1: Get tenant_access_token
+      const token = await getTenantAccessToken(appId, appSecret);
+      console.log('Got tenant_access_token successfully');
 
-        if (feishuResult.code !== 0 && feishuResult.StatusCode !== 0) {
-          console.error(`Feishu error: ${JSON.stringify(feishuResult)}`);
-        }
-      } catch (e) {
-        console.error(`Failed to forward to Feishu: ${e.message}`);
+      // Step 2: Build and send card message
+      const card = buildCard(payload, lang);
+      const result = await sendFeishuMessage(token, chatId, 'interactive', card);
+
+      if (result.code !== 0) {
+        console.error(`Feishu API error: ${JSON.stringify(result)}`);
+      } else {
+        console.log(`Message sent successfully for event: ${payload.event}`);
       }
-    } else {
-      console.log('FEISHU_WEBHOOK_URL not configured, skipping notification');
+    } catch (e) {
+      console.error(`Failed to send notification: ${e.message}`);
     }
 
     // Always return 200 to acknowledge receipt
