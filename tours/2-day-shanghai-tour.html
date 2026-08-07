@@ -39,6 +39,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/i18n.css">
+    <style>
+    @media print {
+        body * { visibility: hidden; }
+        .tour-main, .tour-main * { visibility: visible; }
+        .tour-main { position: absolute; left: 0; top: 0; width: 100%; padding: 0 !important; }
+        .tour-detail-hero, .tour-sidebar, header, footer, .back-to-top { display: none !important; }
+        body { background: white !important; }
+        @page { margin: 1.5cm; }
+        .tour-section { page-break-inside: avoid; }
+        .highlights-grid { page-break-inside: avoid; }
+        .itinerary-item { page-break-inside: avoid; }
+    }
+    </style>
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -331,14 +344,15 @@
                             <span class="price-amount">$129</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <ul class="sidebar-features">
-                            <li><i class="fas fa-check"></i> Pay on the day</li>
-                            <li><i class="fas fa-check"></i> Private guide &amp; driver</li>
-                            <li><i class="fas fa-check"></i> Hotel pickup included</li>
-                            <li><i class="fas fa-check"></i> 240-Hour Visa-Free eligible</li>
-                        </ul>
                         <a href="../contact.html?tour=2day" class="btn btn-primary btn-block">Book Now</a>
                         <a href="https://wa.me/8615347723823" class="btn btn-success btn-block"><i class="fab fa-whatsapp"></i> Inquire on WhatsApp</a>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>Download Itinerary</h3>
+                        <p>Save this tour itinerary as a PDF for offline reference.</p>
+                        <button onclick="window.print()" class="btn btn-secondary btn-block" style="margin-top: 10px;">
+                            <i class="fas fa-file-pdf"></i> Download PDF Itinerary
+                        </button>
                     </div>
                     <div class="sidebar-card">
                         <h3>Need Help?</h3>
@@ -346,14 +360,6 @@
                         <a href="https://wa.me/8615347723823" class="contact-sidebar-link"><i class="fab fa-whatsapp"></i> +86 15347723823</a>
                         <a href="mailto:booking@chinawondertours.com" class="contact-sidebar-link"><i class="fas fa-envelope"></i> booking@chinawondertours.com</a>
                     <a href="#" class="contact-sidebar-link"><i class="fab fa-weixin"></i> WeChat: chinawondertours</a>
-                    </div>
-
-                    <div class="sidebar-card">
-                        <h3>Download Itinerary</h3>
-                        <p>Save this tour itinerary as a PDF for offline reference.</p>
-                        <button onclick="window.print()" class="btn btn-secondary btn-block" style="margin-top: 10px;">
-                            <i class="fas fa-file-pdf"></i> Download PDF Itinerary
-                        </button>
                     </div>
                     <div class="sidebar-card">
                         <h3>Why Book With Us?</h3>

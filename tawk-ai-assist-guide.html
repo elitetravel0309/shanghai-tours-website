@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawk.to AI Assist Setup Guide - Shanghai Wonder Tours</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #c8102e;
+            font-size: 28px;
+            margin-bottom: 8px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #c8102e;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #1a1a2e;
+            font-size: 22px;
+            margin: 30px 0 12px;
+            padding-left: 12px;
+            border-left: 4px solid #c8102e;
+        }
+        h3 {
+            color: #1a1a2e;
+            font-size: 18px;
+            margin: 20px 0 8px;
+        }
+        p { margin-bottom: 12px; }
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #c8102e;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .step-num {
+            display: inline-block;
+            background: #c8102e;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .copy-box {
+            background: #1e1e2e;
+            color: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            position: relative;
+        }
+        .copy-box::before {
+            content: "📋 Copy this";
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background: #c8102e;
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .copy-box.light {
+            background: #f0f4f8;
+            color: #1a1a2e;
+            border: 1px solid #d0d8e0;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 3px solid #c8102e;
+        }
+        .faq-q { font-weight: bold; color: #1a1a2e; }
+        .faq-a { color: #555; margin-top: 4px; }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        ul, ol { margin-left: 24px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; }
+        .toc {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .toc a {
+            color: #c8102e;
+            text-decoration: none;
+        }
+        .toc a:hover { text-decoration: underline; }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .badge-free { background: #28a745; color: #fff; }
+        .badge-paid { background: #ffc107; color: #333; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th { background: #f8f9fa; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Tawk.to AI Assist Setup Guide</h1>
+    <p class="subtitle">Shanghai Wonder Tours | Complete configuration guide with pre-written content</p>
+
+    <div class="toc">
+        <strong>Table of Contents</strong>
+        <ol>
+            <li><a href="#overview">AI Assist Overview</a></li>
+            <li><a href="#enable">Step 1: Enable AI Assist</a></li>
+            <li><a href="#create-agent">Step 2: Create AI Agent (Wizard)</a></li>
+            <li><a href="#business-desc">Step 3: Business Description (Copy & Paste)</a></li>
+            <li><a href="#faqs">Step 4: FAQ Training Data (Copy & Paste)</a></li>
+            <li><a href="#base-prompt">Step 5: Base Prompt (Copy & Paste)</a></li>
+            <li><a href="#data-sources">Step 6: Configure Data Sources</a></li>
+            <li><a href="#channels">Step 7: Assign Channels</a></li>
+            <li><a href="#test">Step 8: Test Your AI Agent</a></li>
+            <li><a href="#pricing">AI Assist Pricing</a></li>
+        </ol>
+    </div>
+
+    <!-- Overview -->
+    <h2 id="overview">What is AI Assist?</h2>
+    <p>Tawk.to AI Assist is an AI-powered add-on that creates an AI agent to handle customer chats 24/7. It uses your knowledge base, website content, and FAQs to automatically answer visitor questions.</p>
+    
+    <div class="tip">
+        <strong>Key Benefits:</strong>
+        <ul>
+            <li>✅ Answers chats automatically when you're offline or busy</li>
+            <li>✅ Trained on YOUR website content and FAQs</li>
+            <li>✅ Supports Live Chat, Tickets, Facebook Messenger, WhatsApp, SMS</li>
+            <li>✅ Seamless hand-off to human agents when needed</li>
+            <li>✅ <strong>Free tier available</strong> (100 messages/month)</li>
+        </ul>
+    </div>
+
+    <!-- Step 1: Enable -->
+    <h2 id="enable">Step 1: Enable AI Assist</h2>
+    <div class="step">
+        <span class="step-num">1</span> Log in to <a href="https://dashboard.tawk.to" target="_blank">Tawk.to Dashboard</a> → Select your property (<strong>shanghaiwondertours.com</strong>)
+    </div>
+    <div class="step">
+        <span class="step-num">2</span> Click <strong>Add-ons</strong> in the left navigation bar
+    </div>
+    <div class="step">
+        <span class="step-num">3</span> Find <strong>AI Assist</strong> → Click <strong>Get Started</strong>
+    </div>
+    <div class="step">
+        <span class="step-num">4</span> Switch the <strong>AI Assist toggle ON</strong>
+    </div>
+    <div class="note">
+        <strong>Note:</strong> The free tier gives you <strong>100 AI messages per month</strong>. If you need more, paid plans start at $29/month. You can start with the free tier and upgrade later.
+    </div>
+
+    <!-- Step 2: Create Agent -->
+    <h2 id="create-agent">Step 2: Create Your AI Agent</h2>
+    <p>After enabling AI Assist, a setup wizard will appear. Follow these steps:</p>
+    <div class="step">
+        <span class="step-num">1</span> Go to <strong>Automation</strong> → <strong>Agents</strong> → Click <strong>Add your first agent</strong>
+    </div>
+    <div class="step">
+        <span class="step-num">2</span> The wizard will ask how you want to create the agent. Choose <strong>"Describe your business"</strong> option
+    </div>
+    <div class="step">
+        <span class="step-num">3</span> When asked for your website URL, enter: <strong>https://www.shanghaiwondertours.com</strong>
+    </div>
+    <div class="step">
+        <span class="step-num">4</span> When asked to describe your business, <strong>copy and paste the text below</strong>
+    </div>
+
+    <!-- Step 3: Business Description -->
+    <h2 id="business-desc">Step 3: Business Description</h2>
+    <p>When the wizard asks you to describe your business, copy and paste this:</p>
+    <div class="copy-box">
+Shanghai Wonder Tours is a premier private tour operator based in Shanghai, China, serving international travelers since 2010. We specialize in personalized, English-speaking tours of Shanghai and surrounding areas.
+
+Our tour offerings include:
+- 2-Day Shanghai City Highlights Tour (from $129/person)
+- Shanghai Classic Full-Day Tour (from $89/person) - covers The Bund, Yu Garden, Shanghai Tower, French Concession, Huangpu River cruise
+- Shanghai Street Food & Night Market Tour (from $65/person) - authentic xiaolongbao, shengjian, local delicacies
+- 3-Day Classic Shanghai Tour (from $189/person) - includes Maglev train, Shanghai Tower, Shanghai Museum
+- 4-Day Family Disney Tour (from $299/person) - Shanghai Disneyland, Zhujiajiao Water Town
+- Shanghai Evening Highlights Tour (from $59/person) - Huangpu River cruise, illuminated Bund skyline
+- Custom private tours tailored to customer preferences
+- Day trips to Zhujiajiao Water Town and surrounding areas
+
+Key facts:
+- Founded in 2010, 10,000+ happy travelers
+- 15+ expert local guides who are Shanghai natives
+- 4.9-star average rating from thousands of reviews
+- 50+ unique tour itineraries
+- Languages: English, Mandarin, Shanghainese, Japanese, French, German
+- Licensed tour operator with comprehensive insurance
+- Best price guarantee - no middleman fees
+- 24/7 customer support
+
+Contact information:
+- WhatsApp/WeChat: +86 15347723823 (WeChat ID: chinawondertours)
+- Email: booking@chinawondertours.com
+- Phone: +86 15347723823 (available 8:00 AM - 10:00 PM CST, daily)
+- Website: www.shanghaiwondertours.com
+
+We cater to English-speaking international travelers visiting Shanghai, including transit travelers, families, couples, solo travelers, and small groups. All tours are fully customizable.
+    </div>
+
+    <!-- Step 4: FAQs -->
+    <h2 id="faqs">Step 4: FAQ Training Data</h2>
+    <p>The wizard will generate FAQs automatically from your website. Review them, and add these additional ones. You can also paste these directly into the <strong>Knowledge → FAQs</strong> section later:</p>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What tours do you offer?</div>
+        <div class="faq-a">A: We offer 6 main tour packages ranging from 3-hour evening tours to 4-day family tours. Our most popular is the Shanghai Classic Full-Day Tour ($89/person). We also offer custom private tours tailored to your interests. Visit our tours page at shanghaiwondertours.com/tours.html for all options.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: How much do tours cost?</div>
+        <div class="faq-a">A: Our tours range from $59/person (Evening Highlights Tour, 3 hours) to $299/person (4-Day Family Disney Tour). Prices vary by tour duration and inclusions. All tours are private with no hidden fees. Group discounts may apply for 4+ travelers.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: How do I book a tour?</div>
+        <div class="faq-a">A: You can book through our website (shanghaiwondertours.com), via WhatsApp at +86 15347723823, or email booking@chinawondertours.com. We recommend WhatsApp for fastest response (usually within minutes). A deposit may be required to confirm your booking.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Can I customize my tour?</div>
+        <div class="faq-a">A: Yes! All our tours are fully customizable. Tell us your interests — food, history, photography, shopping, architecture — and we'll tailor the itinerary for you. Contact us via WhatsApp at +86 15347723823 to discuss your preferences.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What languages do your guides speak?</div>
+        <div class="faq-a">A: Our guides speak English, Mandarin, Shanghainese, Japanese, French, and German. All our guides are Shanghai natives with deep local knowledge. When booking, let us know your preferred language.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What is included in the tour price?</div>
+        <div class="faq-a">A: Tour prices typically include: private English-speaking guide, private transportation, entrance tickets to attractions, and some meals (varies by tour). Hotel pickup and drop-off are included for central Shanghai hotels. Specific inclusions are listed on each tour page.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Do you offer hotel pickup?</div>
+        <div class="faq-a">A: Yes, we provide free hotel pickup and drop-off for hotels in central Shanghai. If your hotel is outside the central area, a small additional fee may apply. Please provide your hotel name and address when booking.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What is your cancellation policy?</div>
+        <div class="faq-a">A: Free cancellation up to 48 hours before the tour start time. Cancellations within 48 hours may incur a 50% fee. Cancellations within 24 hours are non-refundable. Weather-related cancellations are fully refundable.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What payment methods do you accept?</div>
+        <div class="faq-a">A: We accept PayPal, credit cards (Visa, Mastercard), bank transfer, WeChat Pay, and Alipay. A deposit is required to confirm booking, with the balance due on the tour day.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: How long is each tour?</div>
+        <div class="faq-a">A: Tour durations vary: Evening Highlights Tour is 3 hours, Food Tour is 4 hours, Classic Full-Day Tour is 8 hours, 2-Day Tour is 2 days, 3-Day Tour is 3 days, and Family Disney Tour is 4 days. Start times are flexible.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Can you arrange airport transfers?</div>
+        <div class="faq-a">A: Yes, we can arrange airport transfers from Shanghai Pudong International Airport (PVG) or Shanghai Hongqiao Airport (SHA) as an add-on service. Contact us via WhatsApp for pricing and booking.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What if I have dietary restrictions?</div>
+        <div class="faq-a">A: We accommodate all dietary restrictions including vegetarian, vegan, halal, kosher, gluten-free, and food allergies. Please inform us of any dietary needs when booking so we can customize your food tour accordingly.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Is Shanghai safe for tourists?</div>
+        <div class="faq-a">A: Yes, Shanghai is one of the safest major cities in the world for tourists. Violent crime is extremely rare. Our guides ensure you have a safe and comfortable experience. We are a licensed tour operator with comprehensive insurance.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Do you offer group discounts?</div>
+        <div class="faq-a">A: Yes, we offer discounts for groups of 4 or more travelers. The discount varies by tour and group size. Contact us via WhatsApp at +86 15347723823 for a custom quote.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What should I bring on the tour?</div>
+        <div class="faq-a">A: We recommend comfortable walking shoes, weather-appropriate clothing, sunscreen, a hat, and a camera. Bring your passport for attraction entries. We provide bottled water and umbrellas if needed.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Can you help with a visa for China?</div>
+        <div class="faq-a">A: While we don't process visas directly, we can provide tour confirmation letters to support your visa application. Shanghai also offers 144-hour visa-free transit for eligible nationalities. Contact us for details.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: What is the best time to visit Shanghai?</div>
+        <div class="faq-a">A: The best times to visit Shanghai are Spring (March-May) and Autumn (September-November) when the weather is mild and pleasant. Summer (June-August) is hot and humid, Winter (December-February) is cold but less crowded. We operate tours year-round.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q: Do you offer tours in other Chinese cities?</div>
+        <div class="faq-a">A: Our primary focus is Shanghai and nearby water towns like Zhujiajiao. For other Chinese cities (Beijing, Xi'an, Guilin, etc.), we can recommend partner operators. Contact us for multi-city China tour planning.</div>
+    </div>
+
+    <!-- Step 5: Base Prompt -->
+    <h2 id="base-prompt">Step 5: Base Prompt</h2>
+    <p>The wizard will generate a base prompt. Replace it with this optimized version (or edit after creation in <strong>Instructions</strong> page):</p>
+    <div class="copy-box">
+You are Lily, the AI assistant for Shanghai Wonder Tours, a premier private tour operator in Shanghai, China. Your role is to help international travelers plan and book their Shanghai adventure.
+
+## Your Personality
+- Warm, friendly, and enthusiastic about Shanghai
+- Professional yet approachable — like a knowledgeable local friend
+- Concise in responses — give helpful information without being verbose
+- Proactive — always suggest next steps (booking, customizing, contacting a human)
+
+## What You Should Do
+- when a new chat begins, greet the visitor warmly: "Hi there! I'm Lily, your Shanghai travel assistant. How can I help you plan your Shanghai adventure today?"
+- answer questions about our tours, pricing, availability, and booking process
+- recommend tours based on the visitor's interests and time available
+- provide practical travel information about Shanghai (weather, getting around, safety, visas)
+- encourage visitors to book via WhatsApp (+86 15347723823) for fastest response
+- if a visitor asks about customizing a tour, enthusiastically confirm we can customize everything
+- use visitor's name if available
+
+## What You Should NOT Do
+- do not make up prices or tour details not in your knowledge base
+- do not promise specific guide availability — say "we'll match you with the best guide for your interests"
+- do not process payments or take bookings directly — direct visitors to WhatsApp or email for booking
+- do not provide information about tours outside Shanghai (unless asked about other cities)
+- do not give visa or immigration advice beyond general information — recommend checking with their embassy
+
+## Escalation Rules
+- if a visitor wants to book a tour, provide the WhatsApp link (wa.me/8615347723823) and say "For the fastest booking, message us on WhatsApp — we usually reply within minutes!"
+- if a visitor has a complex or specific request, say "Let me connect you with our team who can help with that. You can reach us on WhatsApp at +86 15347723823 or email booking@chinawondertours.com"
+- if a visitor is unhappy or has a complaint, apologize and immediately provide contact info for a human agent: "I'm sorry to hear that. Please contact our team directly at booking@chinawondertours.com or WhatsApp +86 15347723823 so we can resolve this right away."
+- if you don't know the answer, be honest: "I'm not sure about that specific detail, but our team can help! Message us on WhatsApp at +86 15347723823 for a quick answer."
+
+## Quick Reference
+- Website: shanghaiwondertours.com
+- WhatsApp/Phone: +86 15347723823
+- WeChat ID: chinawondertours
+- Email: booking@chinawondertours.com
+- Business hours: 8:00 AM - 10:00 PM CST (but AI assistant is 24/7)
+- Tour price range: $59 - $299 per person
+- Most popular tour: Shanghai Classic Full-Day Tour ($89/person)
+- Founded: 2010, 10,000+ happy travelers, 4.9-star rating
+
+## Response Language
+- respond in the same language the visitor is using
+- if the visitor writes in English, respond in English
+- if the visitor writes in another language, respond in that language if you can
+    </div>
+
+    <!-- Step 6: Data Sources -->
+    <h2 id="data-sources">Step 6: Configure Data Sources</h2>
+    <p>After creating the AI agent, go to <strong>Automation → Agents → [Your Agent] → Knowledge</strong> and configure these data sources:</p>
+    
+    <table>
+        <tr>
+            <th>Data Source</th>
+            <th>Status</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td><strong>Website</strong></td>
+            <td>✅ Enable</td>
+            <td>URL: https://www.shanghaiwondertours.com<br>Tawk.to will crawl and index your website automatically</td>
+        </tr>
+        <tr>
+            <td><strong>FAQs</strong></td>
+            <td>✅ Enable</td>
+            <td>The 18 FAQs from Step 4 above</td>
+        </tr>
+        <tr>
+            <td><strong>Knowledge Base</strong></td>
+            <td>✅ Enable</td>
+            <td>Create KB articles in Tawk.to (see below)</td>
+        </tr>
+        <tr>
+            <td><strong>Shortcuts</strong></td>
+            <td>✅ Enable</td>
+            <td>Create shortcuts for common responses (see below)</td>
+        </tr>
+        <tr>
+            <td><strong>Documents</strong></td>
+            <td>Optional</td>
+            <td>Upload PDF brochures, tour itineraries, etc.</td>
+        </tr>
+        <tr>
+            <td><strong>Text</strong></td>
+            <td>✅ Enable</td>
+            <td>Custom text specific to this AI agent</td>
+        </tr>
+    </table>
+
+    <h3>Recommended Knowledge Base Articles to Create</h3>
+    <p>Create these articles in <strong>Knowledge Base → Articles</strong>:</p>
+    <ol>
+        <li><strong>Complete Tour List & Pricing</strong> — All tours with prices, durations, and highlights</li>
+        <li><strong>Booking Process & Payment Methods</strong> — How to book, deposit info, accepted payments</li>
+        <li><strong>Shanghai Travel Tips</strong> — Best time to visit, what to pack, getting around, safety</li>
+        <li><strong>Visa Information</strong> — 144-hour visa-free transit, visa application tips</li>
+        <li><strong>Cancellation & Refund Policy</strong> — 48-hour free cancellation, refund process</li>
+        <li><strong>Custom Tour FAQ</strong> — How customization works, examples of custom itineraries</li>
+        <li><strong>Meeting Points & Hotel Pickup</strong> — Pickup policy, central Shanghai coverage</li>
+    </ol>
+
+    <h3>Recommended Shortcuts</h3>
+    <p>Create these in <strong>Settings → Shortcuts</strong>:</p>
+    <table>
+        <tr>
+            <th>Shortcut</th>
+            <th>Message</th>
+        </tr>
+        <tr>
+            <td><code>/whatsapp</code></td>
+            <td>The fastest way to reach us is WhatsApp: wa.me/8615347723823 — we usually reply within minutes!</td>
+        </tr>
+        <tr>
+            <td><code>/email</code></td>
+            <td>You can email us at booking@chinawondertours.com — we respond within 24 hours, usually sooner.</td>
+        </tr>
+        <tr>
+            <td><code>/tours</code></td>
+            <td>You can see all our tours at shanghaiwondertours.com/tours.html. Our most popular is the Shanghai Classic Full-Day Tour at $89/person. Would you like me to recommend a tour based on your interests?</td>
+        </tr>
+        <tr>
+            <td><code>/price</code></td>
+            <td>Our tours range from $59 (3-hour Evening Tour) to $299 (4-Day Family Disney Tour). All tours are private with no hidden fees. Which tour interests you?</td>
+        </tr>
+        <tr>
+            <td><code>/customize</code></td>
+            <td>Yes, all our tours are fully customizable! Tell me your interests (food, history, photography, etc.) and I'll help create the perfect itinerary. For detailed customization, message us on WhatsApp: wa.me/8615347723823</td>
+        </tr>
+        <tr>
+            <td><code>/hours</code></td>
+            <td>Our team is available daily from 8:00 AM to 10:00 PM CST. However, I'm here 24/7 to answer your questions! For immediate human assistance, WhatsApp: wa.me/8615347723823</td>
+        </tr>
+        <tr>
+            <td><code>/cancel</code></td>
+            <td>Free cancellation up to 48 hours before your tour. Within 48 hours: 50% fee. Within 24 hours: non-refundable. To cancel, contact us at booking@chinawondertours.com or WhatsApp +86 15347723823.</td>
+        </tr>
+    </table>
+
+    <!-- Step 7: Channels -->
+    <h2 id="channels">Step 7: Assign Channels</h2>
+    <p>Go to <strong>Automation → Agents → [Your Agent] → Channels</strong> and enable:</p>
+    <table>
+        <tr>
+            <th>Channel</th>
+            <th>Enable?</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td><strong>Live Chat (Widget)</strong></td>
+            <td>✅ Yes</td>
+            <td>Main channel — your website chat widget</td>
+        </tr>
+        <tr>
+            <td><strong>Ticketing</strong></td>
+            <td>✅ Yes</td>
+            <td>AI can auto-reply to support tickets</td>
+        </tr>
+        <tr>
+            <td><strong>Knowledge Base</strong></td>
+            <td>✅ Yes</td>
+            <td>AI can suggest KB articles in chat</td>
+        </tr>
+        <tr>
+            <td><strong>Facebook Messenger</strong></td>
+            <td>Optional</td>
+            <td>Enable if you have FB Messenger connected</td>
+        </tr>
+        <tr>
+            <td><strong>SMS / WhatsApp</strong></td>
+            <td>Optional</td>
+            <td>Enable if connected</td>
+        </tr>
+    </table>
+
+    <!-- Step 8: Test -->
+    <h2 id="test">Step 8: Test Your AI Agent</h2>
+    <div class="step">
+        <span class="step-num">1</span> In the AI Agent settings page, use the <strong>test widget</strong> in the lower-right corner
+    </div>
+    <div class="step">
+        <span class="step-num">2</span> Try these test messages:
+    </div>
+    <div class="copy-box light">
+Test Message 1: "Hi, I'm visiting Shanghai for 2 days. What tours do you recommend?"
+
+Test Message 2: "How much is the food tour?"
+
+Test Message 3: "Can I customize a tour for my family with 2 kids?"
+
+Test Message 4: "What's your cancellation policy?"
+
+Test Message 5: "I want to book a tour, what's the best way?"
+
+Test Message 6: "Do your guides speak Japanese?"
+    </div>
+    <div class="step">
+        <span class="step-num">3</span> Check that the AI responds accurately, mentions WhatsApp for booking, and uses the correct pricing
+    </div>
+    <div class="step">
+        <span class="step-num">4</span> Test on your live website by opening the chat widget and sending a message
+    </div>
+
+    <!-- Pricing -->
+    <h2 id="pricing">AI Assist Pricing</h2>
+    <table>
+        <tr>
+            <th>Plan</th>
+            <th>Price</th>
+            <th>Messages/Month</th>
+            <th>AI Agents</th>
+        </tr>
+        <tr>
+            <td><strong>Free (Hobby)</strong></td>
+            <td>$0</td>
+            <td>100</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td><strong>Growth</strong></td>
+            <td>$29/mo</td>
+            <td>1,000</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td><strong>Business</strong></td>
+            <td>$99/mo</td>
+            <td>5,000</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td><strong>Enterprise</strong></td>
+            <td>$299/mo</td>
+            <td>25,000</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <div class="tip">
+        <strong>Recommendation:</strong> Start with the <strong>Free tier (100 messages/month)</strong> to test. If your site gets regular chat traffic, upgrade to <strong>Growth ($29/month, 1,000 messages)</strong>. You can top up additional messages anytime if you run out.
+    </div>
+
+    <div class="warning">
+        <strong>Important:</strong> Each AI reply (including greetings) counts as 1 message. If a visitor has a 10-message conversation, that's 10 messages. Monitor your usage in Add-ons → AI Assist → Message Usage.
+    </div>
+
+    <!-- Summary -->
+    <h2>Quick Summary Checklist</h2>
+    <div class="step">
+        ☐ Step 1: Enable AI Assist (Add-ons → AI Assist → Toggle ON)<br>
+        ☐ Step 2: Create AI Agent (Automation → Agents → Add Agent)<br>
+        ☐ Step 3: Paste Business Description when wizard asks<br>
+        ☐ Step 4: Review and add the 18 FAQs<br>
+        ☐ Step 5: Replace Base Prompt with optimized version<br>
+        ☐ Step 6: Enable data sources (Website, FAQs, KB, Shortcuts)<br>
+        ☐ Step 7: Assign channels (Live Chat + Ticketing at minimum)<br>
+        ☐ Step 8: Test with sample messages<br>
+        ☐ Optional: Create KB articles and Shortcuts for better responses
+    </div>
+
+    <div class="tip" style="margin-top: 30px;">
+        <strong>Need help?</strong> If you get stuck during setup, contact Tawk.to support via the green chat icon in the dashboard, or visit their <a href="https://help.tawk.to/article/getting-started-with-ai-assist" target="_blank">AI Assist Help Guide</a>.
+    </div>
+
+</div>
+</body>
+</html>
