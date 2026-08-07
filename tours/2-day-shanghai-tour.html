@@ -41,15 +41,93 @@
     <link rel="stylesheet" href="../css/i18n.css">
     <style>
     @media print {
-        body * { visibility: hidden; }
-        .tour-main, .tour-main * { visibility: visible; }
-        .tour-main { position: absolute; left: 0; top: 0; width: 100%; padding: 0 !important; }
-        .tour-detail-hero, .tour-sidebar, header, footer, .back-to-top { display: none !important; }
-        body { background: white !important; }
-        @page { margin: 1.5cm; }
-        .tour-section { page-break-inside: avoid; }
-        .highlights-grid { page-break-inside: avoid; }
-        .itinerary-item { page-break-inside: avoid; }
+        /* ===== Page Setup ===== */
+        @page { margin: 1.2cm; }
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+        /* ===== Hide Non-Printable Elements ===== */
+        header.header,
+        .tour-detail-hero,
+        .tour-sidebar,
+        .related-tours,
+        footer.footer,
+        .back-to-top,
+        .btn,
+        button {
+            display: none !important;
+        }
+
+        /* ===== Reset Layout ===== */
+        body { background: white !important; font-size: 11pt !important; color: #1a1a2e !important; margin: 0 !important; padding: 0 !important; }
+        .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+        .section { padding: 0 !important; }
+        .tour-layout { display: block !important; }
+        .tour-main { width: 100% !important; }
+
+        /* ===== Print-Only Header ===== */
+        .tour-main::before {
+            content: "2-Day Shanghai City Highlights Tour";
+            display: block;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 18pt;
+            font-weight: 700;
+            color: #c43a2b;
+            margin-bottom: 4px;
+        }
+        .tour-main::after {
+            content: "Shanghai Wonder Tours  |  booking@chinawondertours.com  |  +86 15347723823";
+            display: block;
+            text-align: center;
+            font-size: 9pt;
+            color: #666;
+            border-bottom: 2px solid #c43a2b;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* ===== Tour Sections ===== */
+        .tour-section { margin-bottom: 18px !important; page-break-inside: avoid; }
+        .tour-section h2 {
+            font-size: 14pt !important; margin-bottom: 8px !important; padding-bottom: 5px !important;
+            border-bottom: 2px solid #c43a2b !important; color: #1a1a2e !important;
+        }
+        .tour-section p { font-size: 10pt !important; line-height: 1.6 !important; margin-bottom: 6px !important; color: #333 !important; }
+
+        /* ===== Highlights Grid ===== */
+        .highlights-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+        .highlight-item { padding: 10px !important; page-break-inside: avoid; }
+        .highlight-icon { font-size: 1.4rem !important; }
+        .highlight-item h4 { font-size: 10pt !important; }
+        .highlight-item p { font-size: 8.5pt !important; line-height: 1.5 !important; }
+
+        /* ===== Itinerary ===== */
+        .itinerary-timeline { padding-left: 20px !important; }
+        .itinerary-timeline::before { left: 6px !important; }
+        .itinerary-item { page-break-inside: avoid; padding-bottom: 14px !important; padding-left: 20px !important; }
+        .itinerary-item::before { left: -20px !important; }
+        .itinerary-time { font-size: 9pt !important; }
+        .itinerary-content h4 { font-size: 10.5pt !important; }
+        .itinerary-content p { font-size: 9pt !important; line-height: 1.6 !important; }
+
+        /* ===== Included / Excluded ===== */
+        .included-excluded { grid-template-columns: 1fr 1fr !important; gap: 12px !important; page-break-inside: avoid; }
+        .included, .excluded { padding: 12px !important; }
+        .included h4, .excluded h4 { font-size: 10pt !important; margin-bottom: 8px !important; }
+        .included ul li, .excluded ul li { font-size: 9pt !important; margin-bottom: 5px !important; }
+
+        /* ===== Info Cards ===== */
+        .info-cards { grid-template-columns: 1fr 1fr 1fr !important; gap: 8px !important; page-break-inside: avoid; }
+        .info-card { padding: 10px !important; }
+        .info-card i { font-size: 1.1rem !important; margin-bottom: 6px !important; }
+        .info-card h4 { font-size: 9pt !important; }
+        .info-card p { font-size: 8pt !important; line-height: 1.4 !important; }
+
+        /* ===== Tour Options ===== */
+        .tour-options { page-break-inside: avoid; }
+        .tour-option-card { page-break-inside: avoid; margin-bottom: 8px !important; padding: 10px !important; border: 1px solid #e8e0d8 !important; border-radius: 6px !important; }
+        .tour-option-card h4 { font-size: 10pt !important; }
+        .tour-option-card p { font-size: 9pt !important; margin-bottom: 4px !important; }
     }
     </style>
     <script type="application/ld+json">
@@ -376,7 +454,7 @@
     </section>
 
     <!-- Related Tours -->
-    <section class="section" style="background: var(--bg-light);">
+    <section class="section related-tours" style="background: var(--bg-light);">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">You May Also Like</span>
