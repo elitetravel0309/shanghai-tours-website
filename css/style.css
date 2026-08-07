@@ -702,6 +702,29 @@ ul { list-style: none; }
 .footer-contact a { color: rgba(255,255,255,0.6); }
 .footer-contact a:hover { color: #fff; }
 
+/* Footer QR Codes */
+.footer-qr-codes {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+.footer-qr {
+    text-align: center;
+}
+.footer-qr img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,0.2);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 4px;
+}
+.footer-qr span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding: 24px 0;
@@ -1730,6 +1753,55 @@ ul { list-style: none; }
     padding: 8px 0;
 }
 .contact-sidebar-link i { color: var(--primary); width: 24px; }
+
+/* Sidebar QR Codes */
+.sidebar-qr-codes {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+}
+.sidebar-qr {
+    text-align: center;
+}
+.sidebar-qr img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 4px;
+}
+.sidebar-qr span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Contact Page QR Codes */
+.contact-qr-codes {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.contact-qr {
+    text-align: center;
+}
+.contact-qr img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 6px;
+}
+.contact-qr span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
 
 @media (max-width: 1024px) {
     .tour-layout { grid-template-columns: 1fr; }
