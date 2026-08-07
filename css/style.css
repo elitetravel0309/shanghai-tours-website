@@ -44,7 +44,9 @@
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --max-width: 1200px;
-    --header-height: 80px;
+    --header-height: 116px;
+    --nav-height: 80px;
+    --top-bar-height: 36px;
     --transition: 0.3s ease;
 }
 
@@ -187,6 +189,39 @@ ul { list-style: none; }
 .btn-block { width: 100%; justify-content: center; }
 
 /* --- Header --- */
+.top-bar {
+    background: #1a1a2e;
+    color: #fff;
+    height: var(--top-bar-height);
+    display: flex;
+    align-items: center;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-bar-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    width: 100%;
+}
+.top-bar-info span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+.top-bar-info i {
+    color: #c43a2b;
+    font-size: 0.85rem;
+}
+.top-bar-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.top-bar-info a:hover { color: #c43a2b; }
+
 .header {
     position: fixed;
     top: 0;
@@ -209,7 +244,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: var(--header-height);
+    height: var(--nav-height);
 }
 
 .logo {
@@ -1402,7 +1437,11 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-    :root { --header-height: 70px; }
+    :root { --header-height: 100px; --nav-height: 70px; --top-bar-height: 30px; }
+
+    .top-bar { font-size: 0.65rem; }
+    .top-bar-info { gap: 10px; justify-content: center; }
+    .top-bar-info span:nth-child(1) { display: none; }
 
     .section { padding: 60px 0; }
     .section-title { font-size: 1.8rem; }

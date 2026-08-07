@@ -10,7 +10,7 @@ const i18n = {
         'nav.about': 'About Us',
         'nav.contact': 'Contact',
         'nav.faq': 'FAQ',
-        'nav.book': 'Book Now',
+        'nav.book': 'WhatsApp Chat',
         'nav.search_placeholder': 'Search tours...',
 
         /* Hero */
@@ -110,7 +110,7 @@ const i18n = {
         'nav.about': '关于我们',
         'nav.contact': '联系我们',
         'nav.faq': '常见问题',
-        'nav.book': '立即预订',
+        'nav.book': 'WhatsApp 聊天',
         'nav.search_placeholder': '搜索路线...',
 
         /* Hero */
