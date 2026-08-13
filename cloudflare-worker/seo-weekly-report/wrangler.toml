@@ -1,0 +1,27 @@
+name = "seo-weekly-report"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# 每周一早上 8:00 (UTC+8 即 00:00 UTC) 触发
+# Crons 用 UTC 时间：周一 00:00 UTC = 08:00 北京时间
+[triggers]
+crons = ["0 0 * * 1"]
+
+# 环境变量（vias wrangler secret 设置敏感信息，普通可用 vars）
+# 必设 secrets（wrangler secret put）:
+#   FEISHU_APP_ID       - 飞书应用 App ID
+#   FEISHU_APP_SECRET   - 飞书应用 App Secret
+#   FEISHU_CHAT_ID      - 目标群聊 ID (oc_xxx)
+#   GSC_CLIENT_EMAIL    - Google Service Account 邮箱 (xxx@xxx.iam.gserviceaccount.com)
+#   GSC_PRIVATE_KEY     - Google Service Account 私钥 (PEM，含换行，注意转义)
+#   GSC_SITE_URL        - Search Console 属性，如 sc-domain:shanghaiwondertours.com
+# 可选:
+#   GSC_DAYS            - 报表周期天数，默认 7
+
+[vars]
+NOTIFICATION_LANG = "zh"
+GSC_DAYS = "7"
+
+# 部署后访问:
+#   https://seo-weekly-report.<your-subdomain>.workers.dev
+#   或配合 [triggers].crons 定时触发；也可用 HTTP 触发手动运行

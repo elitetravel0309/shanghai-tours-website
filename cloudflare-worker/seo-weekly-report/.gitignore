@@ -1,0 +1,4 @@
+__pycache__/
+_dist/
+tmp/
+node_modules/
