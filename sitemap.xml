@@ -1,190 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Main Pages -->
     <url>
-        <loc>https://shanghawondertours.com/</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/about.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/about.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/contact.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/contact.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/faq.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/faq.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
-    <!-- Tour Detail Pages -->
     <url>
-        <loc>https://shanghawondertours.com/tours/2-day-shanghai-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/2-day-modern-shanghai-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/2-day-modern-shanghai-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/2-day-shanghai-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/3-day-classic-shanghai-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/3-day-classic-shanghai-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/3-day-shanghai-water-town-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/3-day-shanghai-family-food-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/4-day-family-disney-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/3-day-shanghai-maglev-experience-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/4-day-shanghai-suzhou-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/3-day-shanghai-water-town-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/classic-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/4-day-family-disney-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/half-day-shanghai-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/4-day-shanghai-in-depth-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/food-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/4-day-shanghai-suzhou-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/night-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/4-day-shanghai-zhouzhuang-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/evening-highlights-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/5-day-shanghai-hangzhou-wuzhen-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/cultural-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/5-day-shanghai-huangshan-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/flexible-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/5-day-shanghai-suzhou-tongli-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/layover-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/6-day-shanghai-huangshan-nature-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/water-town-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/biking-shanghai-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/biking-shanghai-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/classic-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/offbeat-charms-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/cultural-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/vip-dinner-opera-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/evening-highlights-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/private-yu-garden-jade-temple-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/flexible-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/yu-garden-zhujiajiao-bus-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/food-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/zhujiajiao-craft-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/half-day-shanghai-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/shanghai-high-tech-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/hangzhou-day-trip-from-shanghai.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/shanghai-museum-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/layover-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/shanghai-port-shore-tour.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/night-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/suzhou-day-trip-from-shanghai.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/offbeat-charms-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://shanghawondertours.com/tours/hangzhou-day-trip-from-shanghai.html</loc>
-        <lastmod>2026-08-04</lastmod>
+        <loc>https://shanghaiwondertours.com/tours/private-yu-garden-jade-temple-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/shanghai-high-tech-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/shanghai-museum-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/shanghai-port-shore-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/suzhou-day-trip-from-shanghai.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/vip-dinner-opera-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/water-town-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/yu-garden-zhujiajiao-bus-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shanghaiwondertours.com/tours/zhujiajiao-craft-tour.html</loc>
+        <lastmod>2026-08-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
