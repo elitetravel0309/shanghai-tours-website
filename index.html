@@ -43,27 +43,69 @@
 {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
+    "@id": "https://shanghaiwondertours.com/#organization",
     "name": "Shanghai Wonder Tours",
-    "description": "Private guided tours of Shanghai with expert local guides. Customized itineraries, best prices guaranteed.",
+    "alternateName": "Shanghai Wonder Tours - Private Tours & Local Guides",
+    "description": "Private guided tours of Shanghai with expert local guides. Customized itineraries, best prices guaranteed, English-speaking guides since our founding in Shanghai.",
     "url": "https://shanghaiwondertours.com",
-    "logo": "https://shanghaiwondertours.com/images/logo.png",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://shanghaiwondertours.com/images/logo.png",
+        "width": 512,
+        "height": 512
+    },
+    "image": "https://shanghaiwondertours.com/images/tour-bund-panorama.jpg",
     "telephone": "+86-153-4772-3823",
     "email": "booking@chinawondertours.com",
+    "priceRange": "$$",
+    "currenciesAccepted": "CNY, USD",
+    "paymentAccepted": "Cash, Alipay, WeChat Pay, Credit Card",
     "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Shanghai",
         "addressLocality": "Shanghai",
-        "addressCountry": "CN"
+        "addressRegion": "Shanghai",
+        "addressCountry": {
+            "@type": "Country",
+            "name": "China"
+        }
     },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 31.2304,
+        "longitude": 121.4737
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "21:00"
+    },
+    "areaServed": [
+        {"@type": "City", "name": "Shanghai"},
+        {"@type": "City", "name": "Suzhou"},
+        {"@type": "City", "name": "Hangzhou"}
+    ],
+    "knowsAbout": [
+        "Shanghai private tours",
+        "Half-day and full-day Shanghai sightseeing",
+        "Shanghai water town day trips",
+        "Shanghai airport transfers",
+        "Shanghai food tours",
+        "China visa-free transit"
+    ],
     "sameAs": [
         "https://www.facebook.com/chinawondertours",
         "https://www.instagram.com/chinawondertours",
         "https://wa.me/8615347723823"
     ],
-    "areaServed": {
-        "@type": "City",
-        "name": "Shanghai"
-    },
-    "priceRange": "$$$"
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "1000"
+    }
 }
 </script>
     <link rel="alternate" hreflang="en" href="https://shanghaiwondertours.com/tours/index.html">
