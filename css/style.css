@@ -44,7 +44,7 @@
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --max-width: 1200px;
-    --header-height: 116px;
+    --header-height: 0px;   /* header is in normal flow (split header) */
     --nav-height: 80px;
     --top-bar-height: 36px;
     --transition: 0.3s ease;
@@ -2253,3 +2253,46 @@ ul { list-style: none; }
 .featured-tours { padding-top: 20px; }
 .wa-btn { margin-left: 4px; }
 .cat-anchor { display: block; scroll-margin-top: 80px; }
+
+/* ===== Split header (Asia Odyssey Travel style) ===== */
+.header-split {
+    position: relative;               /* flow with page, like reference site */
+    height: auto;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+}
+.header-split .header-row-top {
+    background: #c8102e;                 /* red bar */
+    color: #fff;
+}
+.header-split .hrt-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header-split .hrt-logo { color: #fff; font-size: 1.4rem; }
+.header-split .hrt-logo .logo-text { color: #fff; }
+.header-split .hrt-logo .logo-highlight { color: #ffd700; }
+.header-split .hrt-contact { display: flex; align-items: center; gap: 22px; }
+.header-split .hc-item {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 0.82rem; font-weight: 500; white-space: nowrap;
+}
+.header-split .hc-item i { color: #ffd700; font-size: 0.95rem; }
+.header-split .header-row-nav { background: #fff; border-top: 1px solid rgba(0,0,0,0.05); }
+.header-split .hrn-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 54px; gap: 16px;
+}
+.header-split .hrn-actions { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 768px) {
+    .header-split .hrt-contact { display: none; }
+    .header-split .hrt-inner { justify-content: center; }
+    .header-split .hrn-inner { height: auto; padding: 8px 0; flex-wrap: wrap; }
+}
+@media (max-width: 580px) {
+    .header-split .hrt-logo { font-size: 1.1rem; }
+}
