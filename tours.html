@@ -40,6 +40,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/i18n.css">
     <link rel="alternate" hreflang="en" href="https://shanghaiwondertours.com/tours.html">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Private Shanghai Tours",
+    "description": "Browse private Shanghai tours: half-day, full-day, food, night, water-town and multi-day trips to Suzhou & Hangzhou. Guides in 6 languages.",
+    "url": "https://shanghaiwondertours.com/tours.html",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "Shanghai Wonder Tours",
+        "url": "https://shanghaiwondertours.com"
+    },
+    "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Shanghai Classic Full-Day Tour","url":"https://shanghaiwondertours.com/tours/classic-tour.html"},
+            {"@type":"ListItem","position":2,"name":"Half-Day Shanghai Highlights Tour","url":"https://shanghaiwondertours.com/tours/half-day-shanghai-tour.html"},
+            {"@type":"ListItem","position":3,"name":"Shanghai Street Food & Night Market Tour","url":"https://shanghaiwondertours.com/tours/food-tour.html"},
+            {"@type":"ListItem","position":4,"name":"Zhujiajiao Water Town & Tea Ceremony","url":"https://shanghaiwondertours.com/tours/water-town-tour.html"},
+            {"@type":"ListItem","position":5,"name":"Shanghai Night Skyline & River Cruise","url":"https://shanghaiwondertours.com/tours/night-tour.html"},
+            {"@type":"ListItem","position":6,"name":"3-Day Classic Shanghai Tour","url":"https://shanghaiwondertours.com/tours/3-day-classic-shanghai-tour.html"}
+        ]
+    }
+}
+</script>
 </head>
 <body>
     <!-- Header -->
@@ -64,8 +89,8 @@
                         <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
                         <li><a href="tours.html" class="nav-link active" data-i18n="nav.tours">Tours</a></li>
                         <li><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></li>
-                        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                         <li><a href="blog.html" class="nav-link">Travel Guides</a></li>
+                        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                         <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
                     </ul>
                 </nav>
@@ -111,10 +136,132 @@
         </div>
     </section>
 
-    <!-- All Tours -->
-    <section class="tours-list section">
+    <!-- SEO Intro -->
+    <section class="tours-intro section">
+        <div class="container">
+            <h2>Private Shanghai Tours, Your Way — in 6 Languages</h2>
+            <p>Shanghai Wonder Tours offers <strong>private guided tours</strong> of Shanghai and beyond — from a <strong>half-day city highlights tour</strong> of the Bund and Yu Garden, to <strong>full-day</strong> cultural, food and night tours, and <strong>multi-day</strong> trips to Suzhou, Hangzhou and the water towns. Our English-, Spanish-, German-, French-, Russian- and Arabic-speaking local experts customize every itinerary to your pace and interests.</p>
+        </div>
+    </section>
+
+    <!-- Category Quick Nav -->
+    <section class="tours-catnav">
+        <div class="container">
+            <a href="#featured" class="catnav-chip">Featured</a>
+            <a href="#multiday" class="catnav-chip">Multi-Day Tours</a>
+            <a href="#classic" class="catnav-chip">Classic Tours</a>
+            <a href="#food" class="catnav-chip">Food Tours</a>
+            <a href="#daytrip" class="catnav-chip">Day Trips</a>
+            <a href="#night" class="catnav-chip">Night Tours</a>
+            <a href="#cultural" class="catnav-chip">Cultural</a>
+        </div>
+    </section>
+
+    <!-- Featured Tours -->
+    <section class="featured-tours section" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Featured</span>
+                <h2 class="section-title">Travelers' Favorites</h2>
+                <p class="section-desc">Our most-booked private tours — rated by real travelers.</p>
+            </div>
+            <div class="tours-grid">
+                <div class="tour-card">
+                    <div class="tour-card-image">
+                        <img src="images/tour-bund-panorama.jpg" alt="Shanghai Classic Full-Day Tour" loading="lazy">
+                        <span class="tour-card-badge">Most Popular</span>
+                        <span class="tour-card-duration"><i class="far fa-clock"></i> 8 Hours</span>
+                    </div>
+                    <div class="tour-card-body">
+                        <h3>Shanghai Classic Full-Day Tour</h3>
+                        <p>Bund, Yu Garden, Shanghai Tower, French Concession &amp; river cruise in one day.</p>
+                        <div class="tour-card-footer">
+                            <span class="tour-card-price">From <strong>$89</strong> / person</span>
+                            <a href="tours/classic-tour.html" class="btn btn-secondary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-card-image">
+                        <img src="images/tour-bund-day2.jpg" alt="Half-Day Shanghai Highlights Tour" loading="lazy">
+                        <span class="tour-card-badge">Best Seller</span>
+                        <span class="tour-card-duration"><i class="far fa-clock"></i> 4 Hours</span>
+                    </div>
+                    <div class="tour-card-body">
+                        <h3>Half-Day Shanghai Highlights Tour</h3>
+                        <p>Bund, Yu Garden &amp; Shanghai Tower — the essentials in about 4 hours.</p>
+                        <div class="tour-card-footer">
+                            <span class="tour-card-price">From <strong>$69</strong> / person</span>
+                            <a href="tours/half-day-shanghai-tour.html" class="btn btn-secondary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-card-image">
+                        <img src="images/tour-shanghai-snacks.jpg" alt="Shanghai Street Food Tour" loading="lazy">
+                        <span class="tour-card-badge">Food Lover</span>
+                        <span class="tour-card-duration"><i class="far fa-clock"></i> 4 Hours</span>
+                    </div>
+                    <div class="tour-card-body">
+                        <h3>Shanghai Street Food &amp; Night Market Tour</h3>
+                        <p>Xiaolongbao, shengjian &amp; hidden food alleys with a local guide.</p>
+                        <div class="tour-card-footer">
+                            <span class="tour-card-price">From <strong>$65</strong> / person</span>
+                            <a href="tours/food-tour.html" class="btn btn-secondary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-card-image">
+                        <img src="images/tour-zhujiajiao-boat.jpg" alt="Zhujiajiao Water Town Tour" loading="lazy">
+                        <span class="tour-card-badge">Day Trip</span>
+                        <span class="tour-card-duration"><i class="far fa-clock"></i> 6 Hours</span>
+                    </div>
+                    <div class="tour-card-body">
+                        <h3>Zhujiajiao Water Town &amp; Tea Ceremony</h3>
+                        <p>Ancient canals, gondola ride &amp; tea ceremony — the "Venice of Shanghai".</p>
+                        <div class="tour-card-footer">
+                            <span class="tour-card-price">From <strong>$75</strong> / person</span>
+                            <a href="tours/water-town-tour.html" class="btn btn-secondary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-card-image">
+                        <img src="images/tour-shanghai-night.jpg" alt="Shanghai Night Tour" loading="lazy">
+                        <span class="tour-card-badge">Night</span>
+                        <span class="tour-card-duration"><i class="far fa-clock"></i> 3 Hours</span>
+                    </div>
+                    <div class="tour-card-body">
+                        <h3>Shanghai Night Skyline &amp; River Cruise</h3>
+                        <p>Huangpu River cruise &amp; illuminated Bund skyline after dark.</p>
+                        <div class="tour-card-footer">
+                            <span class="tour-card-price">From <strong>$55</strong> / person</span>
+                            <a href="tours/night-tour.html" class="btn btn-secondary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-card-image">
+                        <img src="images/tour-yu-garden.jpg" alt="3-Day Classic Shanghai Tour" loading="lazy">
+                        <span class="tour-card-badge">Top Seller</span>
+                        <span class="tour-card-duration"><i class="far fa-clock"></i> 3 Days</span>
+                    </div>
+                    <div class="tour-card-body">
+                        <h3>3-Day Classic Shanghai Tour</h3>
+                        <p>Leisure-paced: Shanghai Tower, Yu Garden, the Bund &amp; Maglev experience.</p>
+                        <div class="tour-card-footer">
+                            <span class="tour-card-price">From <strong>$189</strong> / person</span>
+                            <a href="tours/3-day-classic-shanghai-tour.html" class="btn btn-secondary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         <div class="container">
             <!-- 2-Day Shanghai Tour -->
+            <span id="multiday" class="cat-anchor"></span>
             <div class="tour-detail-card" id="2day" data-category="multiday">
                 <div class="tour-detail-image">
                     <img src="images/tour-bund-day.jpg" alt="2-Day Shanghai City Highlights Tour" loading="lazy">
@@ -148,7 +295,7 @@
                             <span class="price-amount">$129</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/2-day-shanghai-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/2-day-shanghai-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -187,7 +334,7 @@
                             <span class="price-amount">$189</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/3-day-classic-shanghai-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/3-day-classic-shanghai-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -226,7 +373,7 @@
                             <span class="price-amount">$219</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/3-day-shanghai-water-town-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/3-day-shanghai-water-town-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -265,12 +412,13 @@
                             <span class="price-amount">$349</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/4-day-shanghai-suzhou-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/4-day-shanghai-suzhou-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
 
             <!-- Classic Tour -->
+            <span id="classic" class="cat-anchor"></span>
             <div class="tour-detail-card" id="classic" data-category="classic">
                 <div class="tour-detail-image">
                     <img src="images/tour-bund-panorama.jpg" alt="Shanghai Classic Full-Day Tour" loading="lazy">
@@ -310,6 +458,7 @@
             </div>
 
             <!-- Food Tour -->
+            <span id="food" class="cat-anchor"></span>
             <div class="tour-detail-card" id="food" data-category="food">
                 <div class="tour-detail-image">
                     <img src="images/tour-shanghai-snacks.jpg" alt="Shanghai Street Food Tour" loading="lazy">
@@ -349,6 +498,7 @@
             </div>
 
             <!-- Water Town Tour -->
+            <span id="daytrip" class="cat-anchor"></span>
             <div class="tour-detail-card" id="watertown" data-category="daytrip">
                 <div class="tour-detail-image">
                     <img src="images/tour-zhujiajiao-boat.jpg" alt="Zhujiajiao Water Town Tour" loading="lazy">
@@ -388,6 +538,7 @@
             </div>
 
             <!-- Night Tour -->
+            <span id="night" class="cat-anchor"></span>
             <div class="tour-detail-card" id="night" data-category="night">
                 <div class="tour-detail-image">
                     <img src="images/tour-shanghai-night.jpg" alt="Shanghai Night Tour" loading="lazy">
@@ -427,6 +578,7 @@
             </div>
 
             <!-- Cultural Tour -->
+            <span id="cultural" class="cat-anchor"></span>
             <div class="tour-detail-card" id="cultural" data-category="cultural">
                 <div class="tour-detail-image">
                     <img src="images/tour-wukang-mansion.jpg" alt="Shanghai Cultural Tour" loading="lazy">
@@ -499,7 +651,7 @@
                             <span class="price-amount">$259</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/vip-dinner-opera-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/vip-dinner-opera-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -538,7 +690,7 @@
                             <span class="price-amount">$95</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/offbeat-charms-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/offbeat-charms-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -577,7 +729,7 @@
                             <span class="price-amount">$69</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/half-day-shanghai-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/half-day-shanghai-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -616,7 +768,7 @@
                             <span class="price-amount">$59</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/evening-highlights-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/evening-highlights-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -655,7 +807,7 @@
                             <span class="price-amount">$79</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/layover-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/layover-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -694,7 +846,7 @@
                             <span class="price-amount">$55</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/flexible-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/flexible-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -733,7 +885,7 @@
                             <span class="price-amount">$150</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/zhujiajiao-craft-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/zhujiajiao-craft-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -772,7 +924,7 @@
                             <span class="price-amount">$65</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/yu-garden-zhujiajiao-bus-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/yu-garden-zhujiajiao-bus-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -811,7 +963,7 @@
                             <span class="price-amount">$60</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/private-yu-garden-jade-temple-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/private-yu-garden-jade-temple-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -850,7 +1002,7 @@
                             <span class="price-amount">$299</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/4-day-family-disney-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/4-day-family-disney-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -889,7 +1041,7 @@
                             <span class="price-amount">$259</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/3-day-shanghai-family-food-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/3-day-shanghai-family-food-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -928,7 +1080,7 @@
                             <span class="price-amount">$179</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/3-day-shanghai-maglev-experience-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/3-day-shanghai-maglev-experience-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -967,7 +1119,7 @@
                             <span class="price-amount">$349</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/4-day-shanghai-in-depth-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/4-day-shanghai-in-depth-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1006,7 +1158,7 @@
                             <span class="price-amount">$379</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/4-day-shanghai-zhouzhuang-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/4-day-shanghai-zhouzhuang-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1045,7 +1197,7 @@
                             <span class="price-amount">$499</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/5-day-shanghai-huangshan-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/5-day-shanghai-huangshan-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1084,7 +1236,7 @@
                             <span class="price-amount">$459</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/5-day-shanghai-hangzhou-wuzhen-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/5-day-shanghai-hangzhou-wuzhen-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1123,7 +1275,7 @@
                             <span class="price-amount">$449</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/5-day-shanghai-suzhou-tongli-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/5-day-shanghai-suzhou-tongli-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1162,7 +1314,7 @@
                             <span class="price-amount">$599</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/6-day-shanghai-huangshan-nature-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/6-day-shanghai-huangshan-nature-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1201,7 +1353,7 @@
                             <span class="price-amount">$159</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/2-day-modern-shanghai-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/2-day-modern-shanghai-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1240,7 +1392,7 @@
                             <span class="price-amount">$49</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/biking-shanghai-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/biking-shanghai-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1279,7 +1431,7 @@
                             <span class="price-amount">$79</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/shanghai-high-tech-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/shanghai-high-tech-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1318,7 +1470,7 @@
                             <span class="price-amount">$69</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/shanghai-museum-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/shanghai-museum-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1357,7 +1509,7 @@
                             <span class="price-amount">$89</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/shanghai-port-shore-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/shanghai-port-shore-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1396,7 +1548,7 @@
                             <span class="price-amount">$99</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/suzhou-day-trip-from-shanghai.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/suzhou-day-trip-from-shanghai.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1435,7 +1587,7 @@
                             <span class="price-amount">$109</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/hangzhou-day-trip-from-shanghai.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/hangzhou-day-trip-from-shanghai.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1474,7 +1626,7 @@
                             <span class="price-amount">$89</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/classic-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/classic-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1512,7 +1664,7 @@
                             <span class="price-amount">$79</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/cultural-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/cultural-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1702,7 @@
                             <span class="price-amount">$65</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/food-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/food-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1587,7 +1739,7 @@
                             <span class="price-amount">$55</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/night-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/night-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
@@ -1625,7 +1777,7 @@
                             <span class="price-amount">$75</span>
                             <span class="price-unit">/ person</span>
                         </div>
-                        <a href="tours/water-town-tour.html" class="btn btn-primary">View Details</a>
+                        <a href="tours/water-town-tour.html" class="btn btn-primary">View Details</a> <a href="https://wa.me/8615347723823?text=Hi!%20I%27m%20interested%20in%20a%20Shanghai%20tour" class="btn btn-success btn-sm wa-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask Now</a>
                     </div>
                 </div>
             </div>
