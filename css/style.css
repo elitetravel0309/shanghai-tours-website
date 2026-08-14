@@ -2243,3 +2243,13 @@ ul { list-style: none; }
 .language-card p { margin: 0; font-size: 0.84rem; color: var(--text-light); line-height: 1.5; }
 .feature-langs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .feature-langs span { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .05em; color: var(--primary-color, #185FA5); border: 1px solid var(--primary-color, #185FA5); border-radius: 5px; padding: 2px 8px; }
+.tours-intro { text-align: center; padding: 40px 0 8px; }
+.tours-intro h2 { font-size: 1.6rem; margin: 0 0 10px; font-family: var(--font-serif, Georgia, serif); }
+.tours-intro p { max-width: 800px; margin: 0 auto; color: var(--text-light, #666); font-size: 0.95rem; line-height: 1.6; }
+.tours-catnav { padding: 20px 0; }
+.tours-catnav .container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.catnav-chip { display: inline-block; padding: 8px 16px; border-radius: 30px; background: var(--bg-light, #f5f5f5); border: 1px solid var(--border-color, rgba(0,0,0,.1)); color: var(--text-color, #222); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all .2s; }
+.catnav-chip:hover { background: var(--primary, #185FA5); color: #fff; }
+.featured-tours { padding-top: 20px; }
+.wa-btn { margin-left: 4px; }
+.cat-anchor { display: block; scroll-margin-top: 80px; }
