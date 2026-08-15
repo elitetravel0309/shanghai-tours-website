@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
     searchBtn.setAttribute('aria-label', 'Search');
     searchBtn.innerHTML = '<i class="fas fa-search"></i>';
 
-    // Insert search button after lang switcher
-    const headerActions = document.querySelector('.header-actions');
+    // Insert search button after lang switcher (support both old .header-actions and new .hrn-actions)
+    const headerActions = document.querySelector('.header-actions') || document.querySelector('.hrn-actions');
     if (headerActions) {
         const langSwitcherBtn = document.getElementById('langSwitcher');
         if (langSwitcherBtn) {
@@ -138,6 +138,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             headerActions.insertBefore(searchBtn, headerActions.firstChild);
         }
+    }
+    // Nav inline search box: click/type opens the fullscreen search overlay
+    const navSearch = document.querySelector('.nav-search');
+    if (navSearch) {
+        navSearch.addEventListener('click', function(e) {
+            e.preventDefault();
+            openSearch();
+        });
     }
 
     document.getElementById('searchTrigger').addEventListener('click', openSearch);
