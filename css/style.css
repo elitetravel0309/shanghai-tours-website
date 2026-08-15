@@ -2094,7 +2094,7 @@ ul { list-style: none; }
 /* Print optimization for PDF itinerary */
 @media print {
     .header, .footer, .tour-sidebar, .back-to-top, 
-    .similar-tours, .cta-section, .hamburger, .search-trigger,
+    .similar-tours, .cta-section, .hamburger, .nav-search,
     .nav, .header-actions, .tour-detail-hero-overlay {
         display: none !important;
     }
