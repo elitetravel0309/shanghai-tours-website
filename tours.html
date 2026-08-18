@@ -267,6 +267,24 @@
         </div>
     </section>
         <div class="container">
+            <!-- Category Filter -->
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;padding:20px 0;border-bottom:1px solid #e9ecef;">
+                <button class="tour-filter-btn active" onclick="filterTours('all')" style="padding:8px 16px;border-radius:20px;border:1px solid #0f3460;background:#0f3460;color:#fff;cursor:pointer;font-size:13px;">All Tours</button>
+                <button class="tour-filter-btn" onclick="filterTours('daytrip')" style="padding:8px 16px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#333;cursor:pointer;font-size:13px;">Day Trips</button>
+                <button class="tour-filter-btn" onclick="filterTours('multiday')" style="padding:8px 16px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#333;cursor:pointer;font-size:13px;">Multi-Day</button>
+                <button class="tour-filter-btn" onclick="filterTours('cultural')" style="padding:8px 16px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#333;cursor:pointer;font-size:13px;">Cultural</button>
+                <button class="tour-filter-btn" onclick="filterTours('food')" style="padding:8px 16px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#333;cursor:pointer;font-size:13px;">Food & Drink</button>
+                <button class="tour-filter-btn" onclick="filterTours('special')" style="padding:8px 16px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#333;cursor:pointer;font-size:13px;">Specialty</button>
+            </div>
+            <script>
+            function filterTours(cat) {
+                document.querySelectorAll('.tour-filter-btn').forEach(b => {b.style.background='#fff';b.style.color='#333';b.style.borderColor='#ddd';b.classList.remove('active');});
+                event.target.style.background='#0f3460';event.target.style.color='#fff';event.target.style.borderColor='#0f3460';event.target.classList.add('active');
+                document.querySelectorAll('.tour-detail-card').forEach(c => {
+                    c.style.display = (cat === 'all' || c.dataset.category === cat) ? '' : 'none';
+                });
+            }
+            </script>
             <!-- 2-Day Shanghai Tour -->
             <span id="multiday" class="cat-anchor"></span>
             <div class="tour-detail-card" id="2day" data-category="multiday">
