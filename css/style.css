@@ -360,8 +360,7 @@ ul { list-style: none; }
 .hero {
     margin-top: var(--header-height);
     position: relative;
-    height: 60vh;
-    min-height: 400px;
+    height: 500px;
     overflow: hidden;
 }
 
