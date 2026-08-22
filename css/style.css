@@ -43,7 +43,7 @@
     --radius-lg: 20px;
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --max-width: 1200px;
+    --max-width: 1400px;
     --header-height: 0px;   /* header is in normal flow (split header) */
     --nav-height: 80px;
     --top-bar-height: 36px;
