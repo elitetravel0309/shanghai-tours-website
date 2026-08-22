@@ -360,8 +360,8 @@ ul { list-style: none; }
 .hero {
     margin-top: var(--header-height);
     position: relative;
-    height: 85vh;
-    min-height: 600px;
+    height: 60vh;
+    min-height: 400px;
     overflow: hidden;
 }
 
@@ -2344,7 +2344,7 @@ ul { list-style: none; }
 .header-split .hrt-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -2360,7 +2360,7 @@ ul { list-style: none; }
 .header-split .hc-item i { color: #ffd700; font-size: 0.95rem; }
 .header-split .header-row-nav { background: #fff; border-top: 1px solid rgba(0,0,0,0.05); }
 .header-split .hrn-inner {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: center;
     height: 54px; gap: 16px;
 }
 .header-split .hrn-actions { display: flex; align-items: center; gap: 14px; }
