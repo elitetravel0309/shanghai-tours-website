@@ -295,6 +295,37 @@ ul { list-style: none; }
 
 .nav-link:hover, .nav-link.active { color: var(--primary); }
 
+/* Dropdown Menu */
+.nav-dropdown { position: relative; }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    padding: 8px 0;
+    z-index: 1000;
+    border: 1px solid var(--border);
+}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { list-style: none; }
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.dropdown-menu li a:hover {
+    background: var(--bg-light, #f8f9fa);
+    color: var(--primary);
+    padding-left: 24px;
+}
+
 .header-actions {
     display: flex;
     align-items: center;
