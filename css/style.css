@@ -377,9 +377,6 @@ ul { list-style: none; }
     background-repeat: no-repeat;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-}
-    background-size: cover;
-    background-position: center;
     opacity: 0;
     transition: opacity 1s ease;
 }
